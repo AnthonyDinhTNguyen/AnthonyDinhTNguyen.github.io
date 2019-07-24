@@ -1,10 +1,10 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "Inventory";
+$servername = "den1.mysql6.gear.host";
+$username = "inventorymoog";
+$password = "Ti6d-o4_bwPf";
+$dbname = "inventorymoog";
 /*require 'C:/wamp64/www/ESDLAB/PHPMailer-master/src/Exception.php';
 require 'C:/wamp64/www/ESDLAB/PHPMailer-master/src/PHPMailer.php';
 require 'C:/wamp64/www/ESDLAB/PHPMailer-master/src/SMTP.php';*/

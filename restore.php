@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "Inventory";
+$servername = "den1.mysql6.gear.host";
+$username = "inventorymoog";
+$password = "Ti6d-o4_bwPf";
+$dbname = "inventorymoog";
 
 $headerrow = 0;
 $connect = mysqli_connect($servername, $username, $password, $dbname);

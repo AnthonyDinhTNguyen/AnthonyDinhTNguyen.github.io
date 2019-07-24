@@ -10,7 +10,7 @@
 	    <header>
 			<div class="container">
 			<div id="branding">
-				<h1><i class="fa fa-rocket"></i> <span class="highlight"> MOOG</span> ESD Lab Inventory123</h1>
+				<h1><i class="fa fa-rocket"></i> <span class="highlight"> MOOG</span> ESD Lab Inventory</h1>
 			</div>
 			<nav>
 				<ul>
