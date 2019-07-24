@@ -147,7 +147,7 @@ function filterOnInput(){
 	var str = document.getElementById("filterInputStr").value;
 	var tab = document.getElementById("myTable");
 	var rowOK = false;
-	for(i = 0; i <tab.rows.length; i++){
+	for(i = 1; i <tab.rows.length; i++){
 		for(j = 0; j<tab.rows[i].cells.length;j++){
 			
 			if(tab.rows[i].cells[j].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
@@ -157,5 +157,8 @@ function filterOnInput(){
 			tab.rows[i].style.display="none";
 		rowOK=false;
 	}
+}
+function alertResult(msg){
+  window.alert(msg);
 }
 

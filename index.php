@@ -47,8 +47,9 @@
 		Filter Input:<input type="text" id="filterInputStr" oninput="filterOnInput()"><br>
 		<?php 
 			if(isset($_GET['checkout'])){
-				echo $_GET['checkout'];
-				echo '<script type="text/javascript">','showCheckout();','</script>';
+				$result= $_GET['checkout'];
+				echo $result;
+				echo '<script type="text/javascript">','showCheckout(); alertResult($result)','</script>';
 			}
 			if(isset($_GET['return'])){
 				echo $_GET['return'];
