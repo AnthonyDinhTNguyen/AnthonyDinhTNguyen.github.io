@@ -1,0 +1,155 @@
+*{
+	margin:0;
+	padding:0;
+}
+html, body{
+		height:100%;
+		scroll-behavior: smooth;
+		
+}
+header{
+	background: #353637;
+	color: #ffffff;
+	padding-top: 30px;
+	min-height: 10%;
+	border-bottom: #353637 3px solid;
+	
+
+}
+header a{
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header li{
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1{
+  margin: 0;
+}
+
+header nav{
+  float: right;
+  margin-top: 4%;
+}
+
+header .highlight{
+	font-family:MoogFont;
+}
+header .highlight, header .current a {
+  color: #98012F;
+  font-weight: bold;
+}
+
+header a:hover{
+  color: #cccccc;
+  font-weight: bold;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  //margin: 1%;
+  font-size: 16pt;
+}
+
+th{
+	height:50px;
+	text-align: center;
+	
+}
+td{
+	height: 50%;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+#myTable{
+	width:100%;
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#newItemForm{
+	display:block;
+	padding: 1%;
+}
+#deleteForm{
+	display:none;
+	padding:1%;
+}
+#updateForm{
+	display:none;
+	padding: 1%;
+}
+#updateForm h2{
+	margin-top:1%;
+}
+#checkoutForm{
+	display:block;
+	padding:1%;
+}
+#returnForm{
+	display:none;
+	padding:1%;
+}
+#backupForm{
+	display:none;
+	padding:1%;
+}
+#restoreForm{
+	display:none;
+	padding:1%;
+}
+@font-face {
+  font-family: 'MoogFont';
+  src: url('Moog.ttf'); /* IE9 Compat Modes */
+}
