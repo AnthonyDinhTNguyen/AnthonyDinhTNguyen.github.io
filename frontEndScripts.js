@@ -150,7 +150,7 @@ function filterOnInput(){
 	for(i = 0; i <tab.rows.length; i++){
 		for(j = 0; j<tab.rows[i].cells.length;j++){
 			
-			if(tab.rows[i].cells[j].textContent.replace(/\s+/g, "").toLowerCase().includes(str.toLowerCase()))
+			if(tab.rows[i].cells[j].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, " ").toLowerCase()))
 				rowOK = true;
 		}
 		if(rowOK==false)
