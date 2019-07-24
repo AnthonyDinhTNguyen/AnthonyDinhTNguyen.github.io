@@ -2,9 +2,9 @@
 <html>
 <script src="frontEndScripts.js"></script>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "den1.mysql6.gear.host";
+$username = "inventorymoog";
+$password = "Ti6d-o4_bwPf";
 $dbname = "Inventory";
 
 // Create connection
