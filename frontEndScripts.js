@@ -158,7 +158,7 @@ function filterOnInput(){
 		rowOK=false;
 	}
 }
-function alertResult(msg){
-  window.alert(msg);
+function alertResult(){
+  window.alert("test");
 }
 
