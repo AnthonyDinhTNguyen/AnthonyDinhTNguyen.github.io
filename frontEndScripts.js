@@ -159,10 +159,10 @@ function filterOnInput(filterStr){
     for(i = 1; i <tab.rows.length; i++){
         if(tab.rows[i].cells[pcnIndex].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
           rowOK = true;
+        if(rowOK==false)
+          tab.rows[i].style.display="none";
+        rowOK=false;
     }
-    if(rowOK==false)
-      tab.rows[i].style.display="none";
-    rowOK=false;
   }
   else{
 	 for(i = 1; i <tab.rows.length; i++){
