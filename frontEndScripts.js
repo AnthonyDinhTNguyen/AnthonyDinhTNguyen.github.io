@@ -142,6 +142,9 @@ function showAll(){
 	}
 }
 
+function alertCheckout(msg){
+  window.alert(msg);
+}
 function filterOnInput(){
 	showAll();
 	var str = document.getElementById("filterInputStr").value;
