@@ -52,7 +52,8 @@
 				echo '<script type="text/javascript">',"showCheckout(); alertResult('$result');",'</script>';
 			}
 			if(isset($_GET['return'])){
-				echo $_GET['return'];
+				$result= $_GET['return'];
+				echo $result;
 				echo '<script type="text/javascript">',"showReturn(); alertResult('$result');",'</script>';
 			}
 		?>
