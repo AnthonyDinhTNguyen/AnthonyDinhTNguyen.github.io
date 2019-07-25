@@ -30,8 +30,8 @@
 		</div>
 		<form action="checkout.php" method="post" id = "checkoutForm">
 			<h1>Checkout Item By Serial Number or PCN</h1>
-			PCN#: <input type="text" name="pcn"><br>
-			Serial#: <input type="text" name="serial"><br>
+			PCN#: <input type="text" name="pcn" oninput="filterOnInput('pcn')"><br>
+			Serial#: <input type="text" name="serial" oninput="filterOnInput('serial')"><br>
 			New Location: <input type="text" name ="area"><br>
 			Your Name: <input type = "text" name ="name"><br>
 			Today's Date:<input type = "date" name = "checkoutDate"><br>
@@ -39,8 +39,8 @@
 		</form>
 		<form action="return.php" method="post" id = "returnForm">
 			<h1>Return Item By Serial Number or PCN</h1>
-			PCN#: <input type="text" name="pcn"><br>
-			Serial#: <input type="text" name="serial"><br>
+			PCN#: <input type="text" name="pcn" oninput="filterOnInput('pcn')"><br>
+			Serial#: <input type="text" name="serial" oninput="filterOnInput('serial')"><br>
 			Today's Date:<input type = "date" name = "returnDate"><br>
 			<input type="submit" value="Return">
 		</form>
