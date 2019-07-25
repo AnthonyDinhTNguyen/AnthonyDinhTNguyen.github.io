@@ -15,11 +15,11 @@ if ($conn->connect_error) {
 $stmt = $conn->prepare("UPDATE ESDInventory SET name = ?, checkoutDate = ?, area = ?, returnDate='' WHERE serial = ? OR pcn = ?");
 $stmt->bind_param("sssss", $name, $checkoutDate, $area, $serial, $pcn);
 
-$name = filter_input(INPUT_POST,'name');
-$checkoutDate = filter_input(INPUT_POST,'checkoutDate');
-$pcn = trim(filter_input(INPUT_POST,'pcn'));
-$serial = trim(filter_input(INPUT_POST,'serial'));
-$area = filter_input(INPUT_POST,'area');
+$name = filter_input(INPUT_POST,'nameCheck');
+$checkoutDate = filter_input(INPUT_POST,'checkoutDateCheck');
+$pcn = trim(filter_input(INPUT_POST,'pcnCheck'));
+$serial = trim(filter_input(INPUT_POST,'serialCheck'));
+$area = filter_input(INPUT_POST,'areaCheck');
 $continue = true;
 if(empty($name)){
 	header("Location: index.php?checkout=*FAILED to Checkout Item. Please Enter Your Name*");
