@@ -39,8 +39,8 @@
 		</form>
 		<form action="return.php" method="post" id = "returnForm">
 			<h1>Return Item By Serial Number or PCN</h1>
-			PCN#: <input type="text" name="pcn" oninput="filterOnInput('pcn')"><br>
-			Serial#: <input type="text" name="serial" oninput="filterOnInput('serial')"><br>
+			PCN#: <input type="text" name="pcn" id = "pcnReturn" oninput="filterOnInput('pcnReturn')"><br>
+			Serial#: <input type="text" name="serial" id = "serialReturn" oninput="filterOnInput('serialReturn')"><br>
 			Today's Date:<input type = "date" name = "returnDate"><br>
 			<input type="submit" value="Return">
 		</form>
