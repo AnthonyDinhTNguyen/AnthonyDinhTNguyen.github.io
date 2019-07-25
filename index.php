@@ -49,11 +49,11 @@
 			if(isset($_GET['checkout'])){
 				$result= $_GET['checkout'];
 				echo $result;
-				echo '<script type="text/javascript">',"showCheckout(); alertCheckout('$result');",'</script>';
+				echo '<script type="text/javascript">',"showCheckout(); alertResult('$result');",'</script>';
 			}
 			if(isset($_GET['return'])){
 				echo $_GET['return'];
-				echo '<script type="text/javascript">','showReturn();','</script>';
+				echo '<script type="text/javascript">',"showReturn(); alertResult('$result');",'</script>';
 			}
 		?>
 		

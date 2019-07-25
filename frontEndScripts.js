@@ -142,7 +142,7 @@ function showAll(){
 	}
 }
 
-function alertCheckout(msg){
+function alertResult(msg){
   window.alert(msg);
 }
 function filterOnInput(){
