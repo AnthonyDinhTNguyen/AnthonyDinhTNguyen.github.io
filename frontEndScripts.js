@@ -1,3 +1,6 @@
+//global constants
+var pcnIndex = 2; //which column is the pcn column
+
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -145,19 +148,31 @@ function showAll(){
 function alertResult(msg){
   window.alert(msg);
 }
+
 function filterOnInput(filterStr){
 	showAll();
 	var str = document.getElementById(filterStr).value;
 	var tab = document.getElementById("myTable");
 	var rowOK = false;
-	for(i = 1; i <tab.rows.length; i++){
-		for(j = 0; j<tab.rows[i].cells.length;j++){
-			
-			if(tab.rows[i].cells[j].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
+//if filtering from the pcn entry field, want to match only the pcn column in the table
+  if(str.includes("pcn")){
+    for(i = 1; i <tab.rows.length; i++){
+        if(tab.rows[i].cells[pcnIndex].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
+          rowOK = true;
+    }
+    if(rowOK==false)
+      tab.rows[i].style.display="none";
+    rowOK=false;
+  }
+  else{
+	 for(i = 1; i <tab.rows.length; i++){
+	 	for(j = 0; j<tab.rows[i].cells.length;j++){	
+	 		if(tab.rows[i].cells[j].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
 				rowOK = true;
 		}
 		if(rowOK==false)
 			tab.rows[i].style.display="none";
 		rowOK=false;
-	}
+	 }
+  }
 }
