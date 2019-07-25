@@ -145,9 +145,9 @@ function showAll(){
 function alertResult(msg){
   window.alert(msg);
 }
-function filterOnInput(){
+function filterOnInput(filterStr){
 	showAll();
-	var str = document.getElementById("filterInputStr").value;
+	var str = document.getElementById(filterStr).value;
 	var tab = document.getElementById("myTable");
 	var rowOK = false;
 	for(i = 1; i <tab.rows.length; i++){
