@@ -159,6 +159,6 @@ function filterOnInput(){
 	}
 }
 function alertResult(msg){
-  window.alert(msg);
+  window.alert("juan");
 }
 
