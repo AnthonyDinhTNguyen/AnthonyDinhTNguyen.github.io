@@ -1,6 +1,6 @@
 //global constants
 var pcnIndex = 2; //which column is the pcn column
-
+var serialIndex = 3;
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -158,6 +158,15 @@ function filterOnInput(filterStr){
   if(filterStr.includes("pcn")){
     for(i = 1; i <tab.rows.length; i++){
         if(tab.rows[i].cells[pcnIndex].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
+          rowOK = true;
+        if(rowOK==false)
+          tab.rows[i].style.display="none";
+        rowOK=false;
+    }
+  }
+  else if(filterStr.includes("serial")){
+    for(i = 1; i <tab.rows.length; i++){
+        if(tab.rows[i].cells[serialIndex].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
           rowOK = true;
         if(rowOK==false)
           tab.rows[i].style.display="none";
