@@ -155,7 +155,7 @@ function filterOnInput(filterStr){
 	var tab = document.getElementById("myTable");
 	var rowOK = false;
 //if filtering from the pcn entry field, want to match only the pcn column in the table
-  if(str.includes("pcn")){
+  if(filterStr.includes("pcn")){
     for(i = 1; i <tab.rows.length; i++){
         if(tab.rows[i].cells[pcnIndex].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
           rowOK = true;
