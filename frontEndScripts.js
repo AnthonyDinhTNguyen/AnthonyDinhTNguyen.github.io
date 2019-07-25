@@ -158,7 +158,7 @@ function filterOnInput(){
 		rowOK=false;
 	}
 }
-function alertRsult(msg){
+function alertResult(msg){
   window.alert("juan");
 }
 
