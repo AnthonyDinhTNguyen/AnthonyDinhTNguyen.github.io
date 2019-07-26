@@ -128,14 +128,19 @@ function tempAlert(msg,duration)
  },duration);
  document.body.appendChild(el);
 }
-function copyOnClick(n){
+function copyOnClick(n, pcnOrSerial){
     var range = document.createRange();
-    range.selectNode(document.getElementById(n));
+    var copyBoxID ="";
+    if(pcnOrSerial == 0)
+      copyBoxID = "pcnID"+n;
+    else
+      copyBoxID = "serialNum"+n;
+    range.selectNode(document.getElementById(copyBoxID));
     window.getSelection().removeAllRanges(); // clear current selection
     window.getSelection().addRange(range); // to select text
     document.execCommand("copy");
     window.getSelection().removeAllRanges();// to deselect	
-	tempAlert("copied "+document.getElementById(n).textContent, 800);
+	tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
 }
 
 function showAll(){
