@@ -15,7 +15,7 @@
 			<nav>
 				<ul>
 					<li class="current"><a href="index.php">Home</a></li>
-					<li><a href="secure.php">Database Manager</a></li>
+					<li><a href="secure.php">Database Management</a></li>
 					<!--<li><a href="services.html">Services</a></li>-->
 				</ul>
 			</nav>
