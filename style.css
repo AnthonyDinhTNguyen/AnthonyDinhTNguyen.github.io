@@ -124,6 +124,7 @@ form{
 #tableContainer{
   width:90%;
   height:50%;
+  margin-left:5%;
   overflow: auto;
 }
 #filterInputStr{
