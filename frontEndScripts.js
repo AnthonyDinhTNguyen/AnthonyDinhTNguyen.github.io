@@ -130,12 +130,12 @@ function tempAlert(msg,duration)
 }
 function copyOnClick(n){
     var range = document.createRange();
-    range.selectNode(document.getElementById("pcnID"+n));
+    range.selectNode(document.getElementById(n));
     window.getSelection().removeAllRanges(); // clear current selection
     window.getSelection().addRange(range); // to select text
     document.execCommand("copy");
     window.getSelection().removeAllRanges();// to deselect	
-	tempAlert("copied "+document.getElementById("pcnID"+n).textContent, 800);
+	tempAlert("copied "+document.getElementById(n).textContent, 800);
 }
 
 function showAll(){
