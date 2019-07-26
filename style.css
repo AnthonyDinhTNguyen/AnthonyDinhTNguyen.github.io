@@ -122,7 +122,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 form{
   margin-left:5%;
 }
-
+#tableContainer{
+  overflow-y:auto;
+}
 #filterInputStr{
   margin-top:1%;
 }
