@@ -44,7 +44,7 @@
 			Today's Date:<input type = "date" name = "returnDate"><br>
 			<input type="submit" value="Return">
 		</form>
-		Filter Input:<input type="text" id="filterInputStr" oninput="filterOnInput('filterInputStr')"><br>
+		<form>Filter Input:<input type="text" id="filterInputStr" oninput="filterOnInput('filterInputStr')"><br></form>
 		<?php 
 			if(isset($_GET['checkout'])){
 				$result= $_GET['checkout'];
