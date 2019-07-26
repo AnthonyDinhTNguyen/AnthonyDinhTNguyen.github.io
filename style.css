@@ -125,34 +125,27 @@ form{
 
 #newItemForm{
 	display:block;
-	padding: 1%;
 }
 #deleteForm{
 	display:none;
-	padding:1%;
 }
 #updateForm{
 	display:none;
-	padding: 1%;
 }
 #updateForm h2{
 	margin-top:1%;
 }
 #checkoutForm{
 	display:block;
-	padding:1%;
 }
 #returnForm{
 	display:none;
-	padding:1%;
 }
 #backupForm{
 	display:none;
-	padding:1%;
 }
 #restoreForm{
 	display:none;
-	padding:1%;
 }
 @font-face {
   font-family: 'MoogFont';
