@@ -71,8 +71,7 @@ td{
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
 #myTable{
-	width:90%;
-  margin-left: 5%;
+	width:100%;
 }
 /* Dropdown Button */
 .dropbtn {
@@ -123,7 +122,8 @@ form{
   margin-left:5%;
 }
 #tableContainer{
-  height:100%;
+  width:90%;
+  height:50%;
   overflow: auto;
 }
 #filterInputStr{
