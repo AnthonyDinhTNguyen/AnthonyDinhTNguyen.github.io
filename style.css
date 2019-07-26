@@ -123,6 +123,9 @@ form{
   margin-left:5%;
 }
 
+#filterInputStr{
+  margin-top:1%;
+}
 #newItemForm{
 	display:block;
 }
