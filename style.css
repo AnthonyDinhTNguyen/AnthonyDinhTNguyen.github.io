@@ -123,7 +123,8 @@ form{
   margin-left:5%;
 }
 #tableContainer{
-  overflow-y:auto;
+  height:100%;
+  overflow: auto;
 }
 #filterInputStr{
   margin-top:1%;
