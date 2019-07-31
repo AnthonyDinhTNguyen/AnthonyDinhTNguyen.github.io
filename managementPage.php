@@ -72,7 +72,7 @@
 			<input type = "file" name = "file" id="file"><br>
 			<input type = "submit" value = "Restore" name = "submit">
 		</form>
-		Filter Input:<input type="text" id="filterInputStr" oninput="filterOnInput()"><br>
+		<form>Filter Input:<input type="text" id="filterInputStr" oninput="filterOnInput('filterInputStr')"></form>
 		<?php
 			if(isset($_GET['insert'])){
 				echo $_GET['insert'];
