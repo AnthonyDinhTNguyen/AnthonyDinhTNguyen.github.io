@@ -129,9 +129,15 @@ function tempAlert(msg,duration)
  document.body.appendChild(el);
 }
 
-function pasteOnClick(){
+function pasteOnClick(pcnOrSerial){
 	var result = '';
-	var sandbox = document.getElementById('pcnCheck');
+	var sandbox;
+	if(pcnOrSerial == 0){
+		sandbox = document.getElementById('pcnCheck');
+	}
+	else{
+		sandbox = document.getElementById('serialCheck');
+	}
 	sandbox.value = '';
 	sandbox.select();
 	document.execCommand('paste');
@@ -140,17 +146,25 @@ function pasteOnClick(){
 function copyOnClick(n, pcnOrSerial){
     var range = document.createRange();
     var copyBoxID ="";
-    if(pcnOrSerial == 0)
+    //if(pcnOrSerial == 0)
       copyBoxID = "pcnID"+n;
-    else
-      copyBoxID = "serialNum"+n;
+    //else
+
     range.selectNode(document.getElementById(copyBoxID));
     window.getSelection().removeAllRanges(); // clear current selection
     window.getSelection().addRange(range); // to select text
     document.execCommand("copy");
     window.getSelection().removeAllRanges();// to deselect	
 	tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
-	pasteOnClick();
+	pasteOnClick(0);
+
+	copyBoxID = "serialNum"+n;
+	range.selectNode(document.getElementById(copyBoxID));
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    pasteOnClick(1);
 }
 
 
