@@ -128,6 +128,17 @@ function tempAlert(msg,duration)
  },duration);
  document.body.appendChild(el);
 }
+
+function pasteOnClick(){
+	var range = document.createRange();
+	range.selectNode(document.getElementById("pcnCheck"));
+	window.getSelection().removeAllRanges();
+	window.getSelection().addRange(range);
+	document.execCommand("paste");
+	window.getSelection().removeAllRanges();
+	tempAlert("pasted",800);
+}
+
 function copyOnClick(n, pcnOrSerial){
     var range = document.createRange();
     var copyBoxID ="";
@@ -141,7 +152,10 @@ function copyOnClick(n, pcnOrSerial){
     document.execCommand("copy");
     window.getSelection().removeAllRanges();// to deselect	
 	tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
+	pasteOnClick();
 }
+
+
 
 function showAll(){
 	var tab = document.getElementById("myTable");
