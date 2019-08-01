@@ -130,13 +130,11 @@ function tempAlert(msg,duration)
 }
 
 function pasteOnClick(){
-	var range = document.createRange();
-	range.selectNode(document.getElementById("pcnCheck"));
-	window.getSelection().removeAllRanges();
-	window.getSelection().addRange(range);
-	document.execCommand("paste");
-	window.getSelection().removeAllRanges();
-	tempAlert("pasted",800);
+	var result = '';
+	var sandbox = document.getElementById('pcnCheck');
+	sandbox.value = '';
+	sandbox.select();
+	document.execCommand('paste');
 }
 
 function copyOnClick(n, pcnOrSerial){
