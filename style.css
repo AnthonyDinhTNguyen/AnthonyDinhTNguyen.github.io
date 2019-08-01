@@ -78,6 +78,11 @@ thead{
 	background-color: #0000fa;
 	position:absolute;
 }
+tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
 /*tbody {
 	overflow:auto;
 	overflow-x:hidden;
