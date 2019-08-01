@@ -172,18 +172,18 @@ function filterOnInput(filterStr){
 	var tab = document.getElementById("myTable");
 	var rowOK = false;
 //if filtering from the pcn entry field, want to match only the pcn column in the table
-  if(filterStr.includes("pcn")){
+  if(filterStr.indexOf("pcn")!= -1){
     for(i = 1; i <tab.rows.length; i++){
-        if(tab.rows[i].cells[pcnIndex].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
+        if(tab.rows[i].cells[pcnIndex].textContent.replace(/\s+/g, "").toLowerCase().indexOf(str.replace(/\s+/g, "").toLowerCase())!=-1)
           rowOK = true;
         if(rowOK==false)
           tab.rows[i].style.display="none";
         rowOK=false;
     }
   }
-  else if(filterStr.includes("serial")){
+  else if(filterStr.indexOf("serial")!=-1){
     for(i = 1; i <tab.rows.length; i++){
-        if(tab.rows[i].cells[serialIndex].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
+        if(tab.rows[i].cells[serialIndex].textContent.replace(/\s+/g, "").toLowerCase().indexOf(str.replace(/\s+/g, "").toLowerCase())!= -1)
           rowOK = true;
         if(rowOK==false)
           tab.rows[i].style.display="none";
@@ -193,7 +193,7 @@ function filterOnInput(filterStr){
   else{
 	 for(i = 1; i <tab.rows.length; i++){
 	 	for(j = 0; j<tab.rows[i].cells.length;j++){	
-	 		if(tab.rows[i].cells[j].textContent.replace(/\s+/g, "").toLowerCase().includes(str.replace(/\s+/g, "").toLowerCase()))
+	 		if(tab.rows[i].cells[j].textContent.replace(/\s+/g, "").toLowerCase().indexOf(str.replace(/\s+/g, "").toLowerCase())!=-1)
 				rowOK = true;
 		}
 		if(rowOK==false)
