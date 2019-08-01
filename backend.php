@@ -19,12 +19,12 @@ $result = $conn->query($sql);
 $pcnN = 0;
 $serialN = 0;
 if ($result->num_rows > 0) {
-    echo "<div id = tableContainer><table id = 'myTable'><tr id=tableHeaderRow><th onclick = 'sortTable(0)'>Manufacture&Model</th><th onclick = 'sortTable(1)'>Description</th><th onclick = 'sortTable(2)'>PCN</th><th onclick = 'sortTable(3)'>Serial#</th><th onclick = 'sortTable(4)'>Calibration Due Date</th><th onclick = 'sortTable(5)'>Location of Item</th><th onclick = 'sortTable(6)'>Last Checked Out By</th><th onclick = 'sortTable(7)'>Checked Out On</th><th onclick = 'sortTable(8)'>Returned On</th></tr>";
+    echo "<div id = tableContainer><table id = 'myTable'><thead><tr><th onclick = 'sortTable(0)'>Manufacture&Model</th><th onclick = 'sortTable(1)'>Description</th><th onclick = 'sortTable(2)'>PCN</th><th onclick = 'sortTable(3)'>Serial#</th><th onclick = 'sortTable(4)'>Calibration Due Date</th><th onclick = 'sortTable(5)'>Location of Item</th><th onclick = 'sortTable(6)'>Last Checked Out By</th><th onclick = 'sortTable(7)'>Checked Out On</th><th onclick = 'sortTable(8)'>Returned On</th></tr></thead>";
     // output data of each row
     while($row = $result->fetch_assoc()) {
 		$pcnID = "pcnID".$pcnN;
         $serialNum = "serialNum".$serialN;
-        echo "<tr><td>".$row["model"]."</td><td>".$row["description"]."</td><td id = $pcnID onclick='copyOnClick($pcnN,0)'>".$row["pcn"]."</td><td id = $serialNum onclick='copyOnClick($serialN,1)'>".$row["serial"]."</td><td>".$row["calibration"]."</td><td>".$row["area"]."</td><td>".$row["name"]."</td><td>".$row["checkoutDate"]."</td><td>".$row["returnDate"]."</td></tr>";
+        echo "<tbody><tr><td>".$row["model"]."</td><td>".$row["description"]."</td><td id = $pcnID onclick='copyOnClick($pcnN,0)'>".$row["pcn"]."</td><td id = $serialNum onclick='copyOnClick($serialN,1)'>".$row["serial"]."</td><td>".$row["calibration"]."</td><td>".$row["area"]."</td><td>".$row["name"]."</td><td>".$row["checkoutDate"]."</td><td>".$row["returnDate"]."</td></tr></tbody>";
 		$pcnN = $pcnN+1;
         $serialN = $serialN +1;
     }
