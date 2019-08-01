@@ -76,7 +76,7 @@ td{
 }
 thead{
 	background-color: #0000fa;
-	position: fixed;
+	//position: fixed;
 }
 tr {
   display: table;
