@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 		$pcnID = "pcnID".$pcnN;
         $serialNum = "serialNum".$serialN;
-        echo "<tbody><tr><td>".$row["model"]."</td><td>".$row["description"]."</td><td id = $pcnID onclick='copyOnClick($pcnN,0)'>".$row["pcn"]."</td><td id = $serialNum onclick='copyOnClick($serialN,1)'>".$row["serial"]."</td><td>".$row["calibration"]."</td><td>".$row["area"]."</td><td>".$row["name"]."</td><td>".$row["checkoutDate"]."</td><td>".$row["returnDate"]."</td></tr></tbody>";
+        echo "<tr><td>".$row["model"]."</td><td>".$row["description"]."</td><td id = $pcnID onclick='copyOnClick($pcnN,0)'>".$row["pcn"]."</td><td id = $serialNum onclick='copyOnClick($serialN,1)'>".$row["serial"]."</td><td>".$row["calibration"]."</td><td>".$row["area"]."</td><td>".$row["name"]."</td><td>".$row["checkoutDate"]."</td><td>".$row["returnDate"]."</td></tr>";
 		$pcnN = $pcnN+1;
         $serialN = $serialN +1;
     }

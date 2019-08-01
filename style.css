@@ -75,9 +75,10 @@ td{
 	//width: 10%;
 }
 thead{
-	background-color: #0000ff;
+	background-color: #0000fa;
+	position:fixed;
 }
-tbody {
+/*tbody {
 	overflow:auto;
 	overflow-x:hidden;
 	display:block;
@@ -87,7 +88,7 @@ tbody tr {
 	display:table;
 	width:100%;
 	table-layout:fixed;
-}
+}*/
 tr:nth-child(even) {background-color: #f2f2f2;}
 #myTable{
 	width:100%;
