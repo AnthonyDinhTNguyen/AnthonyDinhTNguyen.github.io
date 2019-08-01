@@ -62,12 +62,17 @@ table, th, td {
   text-align: center;
 }
 
+table tr td{
+	word-wrap: break-word;
+}
 th{
 	height:50px;
 	text-align: center;
+	width:10%;
 }
 td{
 	height: 50%;
+	width: 10%;
 }
 #tableHeaderRow{
 	position:fixed;
