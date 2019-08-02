@@ -66,12 +66,12 @@ table tr td{
 	word-wrap: break-word;
 }
 th{
-	width: 10%;
+	//width: 10%;
 	height:50px;
 	text-align: center;
 	background-color: #ffffe6;
 	word-wrap:break-word;
-	position:fixed;
+	//position:fixed;
 }
 table{
 	table-layout: fixed;
