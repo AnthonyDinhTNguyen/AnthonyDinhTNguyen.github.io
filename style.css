@@ -141,6 +141,8 @@ form{
   height:50%;
   margin-left:5%;
   overflow: auto;
+  margin-top: 1%;
+  border:3px solid grey;
 }
 #filterInputStr{
   margin-top:1%;
