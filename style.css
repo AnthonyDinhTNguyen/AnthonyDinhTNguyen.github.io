@@ -76,6 +76,7 @@ table{
 }
 td{
 	width:10%;
+	word-wrap: break-word;
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
 #myTable{
