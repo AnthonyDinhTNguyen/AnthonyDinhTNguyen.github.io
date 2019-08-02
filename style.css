@@ -68,23 +68,14 @@ table tr td{
 th{
 	height:50px;
 	text-align: center;
-	//width:10%;
 }
 td{
 	height: 50%;
-	//width: 10%;
 }
-/*tbody {
-	overflow:auto;
-	overflow-x:hidden;
-	display:block;
-	width:100%;
+tr{
+	min-height:10%;
 }
-tbody tr {
-	display:table;
-	width:100%;
-	table-layout:fixed;
-}*/
+
 tr:nth-child(even) {background-color: #f2f2f2;}
 #myTable{
 	width:100%;
