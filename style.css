@@ -75,13 +75,13 @@ td{
 	//width: 10%;
 }
 thead{
-	background-color: #0000fa;
+	background-color: #0000ff;
 	//position: fixed;
 }
 tr {
   display: table;
   width: 100%;
-  table-layout: fixed;
+  //table-layout: fixed;
 }
 /*tbody {
 	overflow:auto;
