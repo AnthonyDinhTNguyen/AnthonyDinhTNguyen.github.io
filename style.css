@@ -132,6 +132,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 form{
   margin-left:5%;
 }
+#headerContainer{
+	width:90%;
+	margin-left:5%;
+}
 #tableContainer{
   width:90%;
   height:50%;
