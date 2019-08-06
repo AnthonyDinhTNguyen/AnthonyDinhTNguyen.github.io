@@ -2,6 +2,10 @@
 var pcnIndex = 2; //which column is the pcn column
 var serialIndex = 3;
 var currentForm = "checkout";
+var checkoutIndex = 0;
+var returnIndex = 1;
+var updateIndex = 0;
+var deleteIndex = 1;
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -174,13 +178,16 @@ function copyOnClick(n){
   var i;
   var formIndex = -1;
   if(currentForm =="checkout"){
-    formIndex = 0;
+    formIndex = checkoutIndex;//index to designate which array element corrensponds to the checkout form in the (getElemetnsbyclassname call in paste function)
   }
   else if(currentForm =="return"){
-    formIndex = 1;
+    formIndex = returnIndex;//index to designate which array element corrensponds to the return form
   } 
   else if(currentForm =="update"){
-    formIndex = 0;
+    formIndex = updateIndex;//index to designate which array element corrensponds to the update form
+  }
+  else if(currentForm =="delete"){
+    formIndex = deleteIndex;//index to designate which array element corrensponds to the delete form
   }
   var range = document.createRange();
   var copyBoxID ="";
