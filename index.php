@@ -30,8 +30,8 @@
 		</div>
 		<form action="checkout.php" method="post" id = "checkoutForm">
 			<h1>Checkout Item By Serial Number or PCN</h1>
-			PCN#: <input type="text" name="pcnCheck" id= "pcnCheck" oninput="filterOnInput('pcnCheck')"><br>
-			Serial#: <input type="text" name="serialCheck" id = "serialCheck" oninput="filterOnInput('serialCheck')"><br>
+			PCN#: <input type="text" name="pcnCheck" id= "pcnCheck" oninput="filterOnInput('pcnCheck')" class = "pcnForm"><br>
+			Serial#: <input type="text" name="serialCheck" id = "serialCheck" oninput="filterOnInput('serialCheck')" class = "serialForm"><br>
 			New Location: <input type="text" name ="areaCheck"><br>
 			Your Name: <input type = "text" name ="nameCheck"><br>
 			Today's Date:<input type = "date" name = "checkoutDateCheck"><br>
@@ -39,8 +39,8 @@
 		</form>
 		<form action="return.php" method="post" id = "returnForm">
 			<h1>Return Item By Serial Number or PCN</h1>
-			PCN#: <input type="text" name="pcn" id = "pcnReturn" oninput="filterOnInput('pcnReturn')"><br>
-			Serial#: <input type="text" name="serial" id = "serialReturn" oninput="filterOnInput('serialReturn')"><br>
+			PCN#: <input type="text" name="pcn" id = "pcnReturn" oninput="filterOnInput('pcnReturn')" class = "pcnForm"><br>
+			Serial#: <input type="text" name="serial" id = "serialReturn" oninput="filterOnInput('serialReturn')" class = "serialForm"><br>
 			Today's Date:<input type = "date" name = "returnDate"><br>
 			<input type="submit" value="Return">
 		</form>

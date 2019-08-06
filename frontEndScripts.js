@@ -64,6 +64,9 @@ function showReturn(){
 	document.getElementById("returnForm").style.display="block";
 }
 
+function mergeSort(n){
+	
+}
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
   table = document.getElementById("myTable");
@@ -133,14 +136,30 @@ function pasteOnClick(pcnOrSerial){
 	var result = '';
 	var sandbox;
 	if(pcnOrSerial == 0){
-		sandbox = document.getElementById('pcnCheck');
+		var lis = document.getElementsByClassName('pcnForm');
+		var i;
+		for (i = 0; i <lis.length().i++){
+			sandbox = lis[i];
+			sandbox.value = '';
+			sandbox.select();
+			document.execCommand('paste');
+		}
+		//sandbox = document.getElementById('pcnCheck');
 	}
 	else{
-		sandbox = document.getElementById('serialCheck');
+		var lis = document.getElementsByClassName('serialForm');
+		var i;
+		for (i = 0; i <lis.length().i++){
+			sandbox = lis[i];
+			sandbox.value = '';
+			sandbox.select();
+			document.execCommand('paste');
+		}
+		//sandbox = document.getElementById('serialCheck');
 	}
-	sandbox.value = '';
-	sandbox.select();
-	document.execCommand('paste');
+	//sandbox.value = '';
+	//sandbox.select();
+	//document.execCommand('paste');
 }
 
 function copyOnClick(n, pcnOrSerial){
