@@ -140,8 +140,8 @@ function pasteOnClick(pcnOrSerial){
 		let lisPcn = document.getElementsByClassName('pcnForm');
 		let i;
 		for (i = 0; i <lisPcn.length;i++){
-      console.log(i);
 			sandbox = lisPcn[i];
+      console.log(sandbox.value);
 			sandbox.value = '';
 			sandbox.select();
 			document.execCommand('paste');
@@ -151,13 +151,14 @@ function pasteOnClick(pcnOrSerial){
 	else{
 		let lisSerial = document.getElementsByClassName('serialForm');
 		let j;
-    let sandbox;
-		//for (j = 0; j <lisSerial.length;j++){
-			sandbox = lisSerial[1];
-			sandbox.value = '';
-			sandbox.select();
+    let sandbox1;
+		for (j = 0; j <lisSerial.length;j++){
+			sandbox1 = lisSerial[j];
+      console.log(sandbox1.value);
+			sandbox1.value = '';
+			sandbox1.select();
 			document.execCommand('paste');
-		//}
+		}
 		//sandbox = document.getElementById('serialCheck');
 	}
 	//sandbox.value = '';
