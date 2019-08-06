@@ -132,37 +132,25 @@ function tempAlert(msg,duration)
  document.body.appendChild(el);
 }
 
-function pasteOnClick(pcnOrSerial){
+function pasteOnClick(pcnOrSerial,formNum){
 	var result = '';
 	//var sandbox;
 	if(pcnOrSerial == 0){
     let sandbox;
-		let lisPcn = document.getElementsByClassName('pcnForm');
-		let i;
-		for (i = 0; i <lisPcn.length;i++){
-			sandbox = lisPcn[i];
-			sandbox.value = '';
-			sandbox.select();
-      console.log(sandbox);
-      sandbox.display = 'none';
-      if(sandbox.style.display==="block"){
-        console.log("dispaly is block");
-			 document.execCommand('paste');
-      }
-		}
+		let listPcnInput = document.getElementsByClassName('pcnInput');
+		sandbox = listPcnInput[formNum];
+		sandbox.value = '';
+		sandbox.select();
+		document.execCommand('paste');
 		//sandbox = document.getElementById('pcnCheck');
 	}
 	else{
-		let lisSerial = document.getElementsByClassName('serialForm');
-		let j;
+		let listSerialInput = document.getElementsByClassName('serialInput');
     let sandbox1;
-		for (j = 0; j <lisSerial.length;j++){
-			sandbox1 = lisSerial[j];
-      console.log("Serial Log:"+sandbox1.value);
-			sandbox1.value = '';
-			sandbox1.select();
-			document.execCommand('paste');
-		}
+		sandbox1 = listSerialInput[formNum];
+		sandbox1.value = '';
+		sandbox1.select();
+		document.execCommand('paste');
 		//sandbox = document.getElementById('serialCheck');
 	}
 	//sandbox.value = '';
@@ -171,27 +159,35 @@ function pasteOnClick(pcnOrSerial){
 }
 
 function copyOnClick(n, pcnOrSerial){
-    var range = document.createRange();
-    var copyBoxID ="";
-    //if(pcnOrSerial == 0)
-      copyBoxID = "pcnID"+n;
-    //else
+  //figure out which form checkout, return, update... is visible
+  var formsList= document.getElementsByClassName('inputForm');
+  var i;
+  for(i = 0; i <formsList.length;i++){
+    if(formsList[i].style.display ==="block")
+      break;
+  }
 
-    range.selectNode(document.getElementById(copyBoxID));
-    window.getSelection().removeAllRanges(); // clear current selection
-    window.getSelection().addRange(range); // to select text
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();// to deselect	
+  var range = document.createRange();
+  var copyBoxID ="";
+  //if(pcnOrSerial == 0)
+  copyBoxID = "pcnID"+n;
+  //else
+
+  range.selectNode(document.getElementById(copyBoxID));
+  window.getSelection().removeAllRanges(); // clear current selection
+  window.getSelection().addRange(range); // to select text
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();// to deselect	
 	tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
-	pasteOnClick(0);
+	pasteOnClick(0,i); //designate pcn and designate which form 
 
 	copyBoxID = "serialNum"+n;
 	range.selectNode(document.getElementById(copyBoxID));
-    window.getSelection().removeAllRanges(); // clear current selection
-    window.getSelection().addRange(range); // to select text
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
-    pasteOnClick(1);
+  window.getSelection().removeAllRanges(); // clear current selection
+  window.getSelection().addRange(range); // to select text
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+  pasteOnClick(1,i);
 }
 
 
