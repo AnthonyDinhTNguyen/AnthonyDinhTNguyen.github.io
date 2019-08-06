@@ -144,7 +144,7 @@ function pasteOnClick(pcnOrSerial){
 			sandbox.value = '';
 			sandbox.select();
       console.log("Pcn Log:"+sandbox.style.display);
-      if(sandbox.style.display==="none"){
+      if(sandbox.style.display==="block"){
 			 document.execCommand('paste');
       }
 		}
