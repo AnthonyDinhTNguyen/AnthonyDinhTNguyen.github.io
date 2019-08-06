@@ -139,8 +139,8 @@ function pasteOnClick(pcnOrSerial,formNum){
     let sandbox;
 		let listPcnInput = document.getElementsByClassName('pcnInput');
 		sandbox = listPcnInput[formNum];
-    console.log(sandbox)
-    console.log(formNum)
+    console.log(sandbox);
+    console.log(formNum);
 		sandbox.value = '';
 		sandbox.select();
 		document.execCommand('paste');
@@ -164,11 +164,16 @@ function copyOnClick(n, pcnOrSerial){
   //figure out which form checkout, return, update... is visible
   var formsList= document.getElementsByClassName('inputForm');
   var i;
+  var formIndex = -1;
   for(i = 0; i <formsList.length;i++){
-    if(formsList[i].style.display ==="block")
+    console.log(formsList[i]);
+    if(formsList[i].style.display =="block"){
+      formIndex = i;
       break;
+    }
   }
-
+  if(formIndex == -1)
+    console.log("no form display is block")
   var range = document.createRange();
   var copyBoxID ="";
   //if(pcnOrSerial == 0)
