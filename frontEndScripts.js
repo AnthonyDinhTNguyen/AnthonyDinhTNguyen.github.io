@@ -177,7 +177,9 @@ function copyOnClick(n){
   if(currentForm =="checkout"){
     formIndex = 0;
   }
-    
+  else if(currentForm =="return"){
+    formIndex = 1;
+  } 
   var range = document.createRange();
   var copyBoxID ="";
   //if(pcnOrSerial == 0)
