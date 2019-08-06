@@ -170,7 +170,7 @@ function pasteOnClick(pcnOrSerial,formNum){
 	//document.execCommand('paste');
 }
 
-function copyOnClick(n, pcnOrSerial){
+function copyOnClick(n){
   //figure out which form checkout, return, update... is visible
   var i;
   var formIndex = -1;
