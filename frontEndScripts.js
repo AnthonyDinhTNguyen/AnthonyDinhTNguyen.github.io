@@ -144,6 +144,7 @@ function pasteOnClick(pcnOrSerial){
       console.log(sandbox.value);
 			sandbox.value = '';
 			sandbox.select();
+      console.log(sandbox.style.display);
       if(sandbox.style.display!="none"){
 			 document.execCommand('paste');
       }
