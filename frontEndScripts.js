@@ -1,6 +1,7 @@
 //global constants
 var pcnIndex = 2; //which column is the pcn column
 var serialIndex = 3;
+var currentForm = "checkout";
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -27,6 +28,7 @@ function showInsert(){
 	document.getElementById("updateForm").style.display="none";
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="none";
+  currentForm = "insert";
 }
 function showDelete(){
 	document.getElementById("newItemForm").style.display="none";
@@ -34,6 +36,7 @@ function showDelete(){
 	document.getElementById("updateForm").style.display="none";
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="none";
+  currentForm = "delete";
 }
 function showUpdate(){
 	document.getElementById("newItemForm").style.display="none";
@@ -41,6 +44,7 @@ function showUpdate(){
 	document.getElementById("updateForm").style.display="block";
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="none";
+  currentForm = "update";
 }
 function showBackup(){
 	document.getElementById("newItemForm").style.display="none";
@@ -48,20 +52,26 @@ function showBackup(){
 	document.getElementById("updateForm").style.display="none";
 	document.getElementById("backupForm").style.display="block";
 	document.getElementById("restoreForm").style.display="none";
-}function showRestore(){
+  currentForm = "backup";
+}
+function showRestore(){
 	document.getElementById("newItemForm").style.display="none";
 	document.getElementById("deleteForm").style.display="none";
 	document.getElementById("updateForm").style.display="none";
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="block";
+  currentForm = "restore";
+
 }
 function showCheckout(){
 	document.getElementById("checkoutForm").style.display="block";
 	document.getElementById("returnForm").style.display="none";
+  currentForm = "checkout";
 }
 function showReturn(){
 	document.getElementById("checkoutForm").style.display="none";
 	document.getElementById("returnForm").style.display="block";
+  currentForm = "return";
 }
 
 function mergeSort(n){
@@ -162,19 +172,12 @@ function pasteOnClick(pcnOrSerial,formNum){
 
 function copyOnClick(n, pcnOrSerial){
   //figure out which form checkout, return, update... is visible
-  var formsList= document.getElementsByClassName('inputForm');
   var i;
   var formIndex = -1;
-  for(i = 0; i <formsList.length;i++){
-    console.log(formsList[i]);
-    console.log(formsList[i].style.display);
-    if(formsList[i].style.display =="block"){
-      formIndex = i;
-      break;
-    }
+  if(currentForm =="checkout"){
+    formIndex = 0;
   }
-  if(formIndex == -1)
-    console.log("no form display is block")
+    
   var range = document.createRange();
   var copyBoxID ="";
   //if(pcnOrSerial == 0)
@@ -187,7 +190,7 @@ function copyOnClick(n, pcnOrSerial){
   document.execCommand("copy");
   window.getSelection().removeAllRanges();// to deselect	
 	tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
-	pasteOnClick(0,i); //designate pcn and designate which form 
+	pasteOnClick(0,formIndex); //designate pcn and designate which form 
 
 	copyBoxID = "serialNum"+n;
 	range.selectNode(document.getElementById(copyBoxID));
@@ -195,7 +198,8 @@ function copyOnClick(n, pcnOrSerial){
   window.getSelection().addRange(range); // to select text
   document.execCommand("copy");
   window.getSelection().removeAllRanges();
-  pasteOnClick(1,i);
+  pasteOnClick(1,formIndex);
+  }
 }
 
 
