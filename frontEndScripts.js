@@ -139,6 +139,8 @@ function pasteOnClick(pcnOrSerial,formNum){
     let sandbox;
 		let listPcnInput = document.getElementsByClassName('pcnInput');
 		sandbox = listPcnInput[formNum];
+    console.log(sandbox)
+    console.log(formNum)
 		sandbox.value = '';
 		sandbox.select();
 		document.execCommand('paste');
