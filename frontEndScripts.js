@@ -167,6 +167,7 @@ function copyOnClick(n, pcnOrSerial){
   var formIndex = -1;
   for(i = 0; i <formsList.length;i++){
     console.log(formsList[i]);
+    console.log(formsList[i].style.display);
     if(formsList[i].style.display =="block"){
       formIndex = i;
       break;
