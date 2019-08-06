@@ -151,12 +151,12 @@ function pasteOnClick(pcnOrSerial){
 		let lisSerial = document.getElementsByClassName('serialForm');
 		let i;
     let sandbox;
-		for (i = 0; i <lisSerial.length;i++){
-			sandbox = lisSerial[i];
+		//for (i = 0; i <lisSerial.length;i++){
+			sandbox = lisSerial[0];
 			sandbox.value = '';
 			sandbox.select();
 			document.execCommand('paste');
-		}
+		//}
 		//sandbox = document.getElementById('serialCheck');
 	}
 	//sandbox.value = '';
