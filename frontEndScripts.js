@@ -26,6 +26,18 @@ window.onclick = function(event) {
   }
 }
 
+function clearForms(){
+  var pcnList = document.getElementsByClassName("pcnInput");
+  var serialList = document.getElementsByClassName("serialInput");
+  var i;
+  for (i = 0; i < pcnList.length;i++){
+    let el1 = pcnList[i];
+    el1.value = '';
+    let el2 = serialList[i];
+    el2.value = '';
+  }
+
+}
 function showInsert(){
 	document.getElementById("newItemForm").style.display="block";
 	document.getElementById("deleteForm").style.display="none";
@@ -33,6 +45,7 @@ function showInsert(){
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "insert";
+  clearForms(); // delete form content on form switch
 }
 function showDelete(){
 	document.getElementById("newItemForm").style.display="none";
@@ -41,6 +54,7 @@ function showDelete(){
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "delete";
+  clearForms(); // delete form content on form switch
 }
 function showUpdate(){
 	document.getElementById("newItemForm").style.display="none";
@@ -49,6 +63,7 @@ function showUpdate(){
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "update";
+  clearForms(); // delete form content on form switch
 }
 function showBackup(){
 	document.getElementById("newItemForm").style.display="none";
@@ -57,6 +72,7 @@ function showBackup(){
 	document.getElementById("backupForm").style.display="block";
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "backup";
+  clearForms(); // delete form content on form switch
 }
 function showRestore(){
 	document.getElementById("newItemForm").style.display="none";
@@ -65,17 +81,20 @@ function showRestore(){
 	document.getElementById("backupForm").style.display="none";
 	document.getElementById("restoreForm").style.display="block";
   currentForm = "restore";
+  clearForms(); // delete form content on form switch
 
 }
 function showCheckout(){
 	document.getElementById("checkoutForm").style.display="block";
 	document.getElementById("returnForm").style.display="none";
   currentForm = "checkout";
+  clearForms(); // delete form content on form switch
 }
 function showReturn(){
 	document.getElementById("checkoutForm").style.display="none";
 	document.getElementById("returnForm").style.display="block";
   currentForm = "return";
+  clearForms(); // delete form content on form switch
 }
 
 function mergeSort(n){
