@@ -136,8 +136,8 @@ function pasteOnClick(pcnOrSerial){
 	var result = '';
 	var sandbox;
 	if(pcnOrSerial == 0){
-		var lis = document.getElementsByClassName('pcnForm');
-		var i;
+		let lis = document.getElementsByClassName('pcnForm');
+		let i;
 		for (i = 0; i <lis.length;i++){
 			sandbox = lis[i];
 			sandbox.value = '';
@@ -147,8 +147,8 @@ function pasteOnClick(pcnOrSerial){
 		//sandbox = document.getElementById('pcnCheck');
 	}
 	else{
-		var lis = document.getElementsByClassName('serialForm');
-		var i;
+		let lis = document.getElementsByClassName('serialForm');
+		let i;
 		for (i = 0; i <lis.length;i++){
 			sandbox = lis[i];
 			sandbox.value = '';
