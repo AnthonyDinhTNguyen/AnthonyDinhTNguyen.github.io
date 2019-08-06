@@ -152,7 +152,7 @@ function pasteOnClick(pcnOrSerial){
 		let i;
     let sandbox;
 		//for (i = 0; i <lisSerial.length;i++){
-			sandbox = lisSerial[0];
+			sandbox = lisSerial[1];
 			sandbox.value = '';
 			sandbox.select();
 			document.execCommand('paste');
