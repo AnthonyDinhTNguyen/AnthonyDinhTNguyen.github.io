@@ -141,11 +141,10 @@ function pasteOnClick(pcnOrSerial){
 		let i;
 		for (i = 0; i <lisPcn.length;i++){
 			sandbox = lisPcn[i];
-      console.log(sandbox.value);
 			sandbox.value = '';
 			sandbox.select();
-      console.log(sandbox.style.display);
-      if(sandbox.style.display!="none"){
+      console.log("Pcn Log:"+sandbox.style.display);
+      if(sandbox.style.display==="none"){
 			 document.execCommand('paste');
       }
 		}
@@ -157,7 +156,7 @@ function pasteOnClick(pcnOrSerial){
     let sandbox1;
 		for (j = 0; j <lisSerial.length;j++){
 			sandbox1 = lisSerial[j];
-      console.log(sandbox1.value);
+      console.log("Serial Log:"+sandbox1.value);
 			sandbox1.value = '';
 			sandbox1.select();
 			document.execCommand('paste');
