@@ -134,12 +134,13 @@ function tempAlert(msg,duration)
 
 function pasteOnClick(pcnOrSerial){
 	var result = '';
-	var sandbox;
+	//var sandbox;
 	if(pcnOrSerial == 0){
-		let lis = document.getElementsByClassName('pcnForm');
+    let sandbox;
+		let lisPcn = document.getElementsByClassName('pcnForm');
 		let i;
-		for (i = 0; i <lis.length;i++){
-			sandbox = lis[i];
+		for (i = 0; i <lisPcn.length;i++){
+			sandbox = lisPcn[i];
 			sandbox.value = '';
 			sandbox.select();
 			document.execCommand('paste');
@@ -147,10 +148,11 @@ function pasteOnClick(pcnOrSerial){
 		//sandbox = document.getElementById('pcnCheck');
 	}
 	else{
-		let lis = document.getElementsByClassName('serialForm');
+		let lisSerial = document.getElementsByClassName('serialForm');
 		let i;
-		for (i = 0; i <lis.length;i++){
-			sandbox = lis[i];
+    let sandbox;
+		for (i = 0; i <lisSerial.length;i++){
+			sandbox = lisSerial[i];
 			sandbox.value = '';
 			sandbox.select();
 			document.execCommand('paste');
