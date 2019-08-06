@@ -44,8 +44,8 @@
 		<form action="update.php" method="post" id = "updateForm">
 			<h1>Update Existing Database Entry</h1>
 			<h2>Enter the PCN or Serial Number of Entry You Want To Update</h2>
-			PCN#: <input type="text" name="pcn"><br>
-			Serial#: <input type="text" name="serial"><br>
+			PCN#: <input type="text" name="pcn" class = "pcnInput"><br>
+			Serial#: <input type="text" name="serial" class = "serialInput"><br>
 			<h2>Enter the Updated Information</h2>
 			Manufacture/Model: <input type="text" name="model"><br>
 			Item Description:  <input type="text" name="description"><br>
@@ -58,8 +58,8 @@
 		</form>
 		<form action="delete.php" method="post" id="deleteForm">
 			<h1>Delete Item Based on PCN or Serial Number</h1>
-			PCN#: <input type="text" name="pcn"><br>
-			Serial#: <input type="text" name="serial"><br>
+			PCN#: <input type="text" name="pcn" class = "pcnInput"><br>
+			Serial#: <input type="text" name="serial" class = "serialInput"><br>
 			<input type = "submit" value = "Delete Entry">
 		</form>
 		<form action="backup.php" method="post" id="backupForm">

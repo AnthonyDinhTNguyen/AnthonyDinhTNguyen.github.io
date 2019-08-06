@@ -28,7 +28,7 @@
 				<button onclick="showReturn()">Return Item</button>
 			</div>
 		</div>
-		<form action="checkout.php" method="post" id = "checkoutForm" class ="inputForm">
+		<form action="checkout.php" method="post" id = "checkoutForm">
 			<h1>Checkout Item By Serial Number or PCN</h1>
 			PCN#: <input type="text" name="pcnCheck" id= "pcnCheck" oninput="filterOnInput('pcnCheck')" class = "pcnInput"><br>
 			Serial#: <input type="text" name="serialCheck" id = "serialCheck" oninput="filterOnInput('serialCheck')" class = "serialInput"><br>
@@ -37,7 +37,7 @@
 			Today's Date:<input type = "date" name = "checkoutDateCheck"><br>
 			<input type="submit" value="Checkout">
 		</form>
-		<form action="return.php" method="post" id = "returnForm" class ="inputForm">
+		<form action="return.php" method="post" id = "returnForm">
 			<h1>Return Item By Serial Number or PCN</h1>
 			PCN#: <input type="text" name="pcn" id = "pcnReturn" oninput="filterOnInput('pcnReturn')" class = "pcnInput"><br>
 			Serial#: <input type="text" name="serial" id = "serialReturn" oninput="filterOnInput('serialReturn')" class = "serialInput"><br>

@@ -144,7 +144,6 @@ function tempAlert(msg,duration)
 
 function pasteOnClick(pcnOrSerial,formNum){
 	var result = '';
-	//var sandbox;
 	if(pcnOrSerial == 0){
     let sandbox;
 		let listPcnInput = document.getElementsByClassName('pcnInput');
@@ -180,6 +179,9 @@ function copyOnClick(n){
   else if(currentForm =="return"){
     formIndex = 1;
   } 
+  else if(currentForm =="update"){
+    formIndex = 0;
+  }
   var range = document.createRange();
   var copyBoxID ="";
   //if(pcnOrSerial == 0)
