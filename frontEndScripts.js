@@ -144,7 +144,7 @@ function pasteOnClick(pcnOrSerial){
 			sandbox.value = '';
 			sandbox.select();
       console.log(sandbox);
-      sandbox.style.display = 'none';
+      sandbox.display = 'none';
       if(sandbox.style.display==="block"){
         console.log("dispaly is block");
 			 document.execCommand('paste');
