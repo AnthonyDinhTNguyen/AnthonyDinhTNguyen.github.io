@@ -199,9 +199,7 @@ function copyOnClick(n, pcnOrSerial){
   document.execCommand("copy");
   window.getSelection().removeAllRanges();
   pasteOnClick(1,formIndex);
-  }
 }
-
 
 
 function showAll(){
