@@ -139,13 +139,15 @@ function pasteOnClick(pcnOrSerial){
     let sandbox;
 		let lisPcn = document.getElementsByClassName('pcnForm');
 		let i;
-		//for (i = 0; i <lisPcn.length;i++){
-			sandbox = lisPcn[0];
+		for (i = 0; i <lisPcn.length;i++){
+			sandbox = lisPcn[i];
       console.log(sandbox.value);
 			sandbox.value = '';
 			sandbox.select();
-			document.execCommand('paste');
-		//}
+      if(sandbox.style.display!="none"){
+			 document.execCommand('paste');
+      }
+		}
 		//sandbox = document.getElementById('pcnCheck');
 	}
 	else{
