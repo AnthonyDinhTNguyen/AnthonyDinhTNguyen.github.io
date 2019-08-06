@@ -143,7 +143,7 @@ function pasteOnClick(pcnOrSerial){
 			sandbox = lisPcn[i];
 			sandbox.value = '';
 			sandbox.select();
-      console.log("Pcn Log:".concat(sandbox.style.display);
+      console.log("Pcn Log:".concat(sandbox.style.display));
       if(sandbox.style.display==="block"){
         console.log("dispaly is block");
 			 document.execCommand('paste');
