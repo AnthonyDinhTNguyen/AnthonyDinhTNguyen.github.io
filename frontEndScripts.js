@@ -138,7 +138,7 @@ function pasteOnClick(pcnOrSerial){
 	if(pcnOrSerial == 0){
 		var lis = document.getElementsByClassName('pcnForm');
 		var i;
-		for (i = 0; i <lis.length();i++){
+		for (i = 0; i <lis.length;i++){
 			sandbox = lis[i];
 			sandbox.value = '';
 			sandbox.select();
@@ -149,7 +149,7 @@ function pasteOnClick(pcnOrSerial){
 	else{
 		var lis = document.getElementsByClassName('serialForm');
 		var i;
-		for (i = 0; i <lis.length();i++){
+		for (i = 0; i <lis.length;i++){
 			sandbox = lis[i];
 			sandbox.value = '';
 			sandbox.select();
