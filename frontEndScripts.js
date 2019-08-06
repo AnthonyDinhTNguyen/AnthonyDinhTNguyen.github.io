@@ -145,6 +145,7 @@ function pasteOnClick(pcnOrSerial){
 			sandbox.select();
       console.log("Pcn Log:"+sandbox.style.display);
       if(sandbox.style.display==="block"){
+        console.log("dispaly is block");
 			 document.execCommand('paste');
       }
 		}
