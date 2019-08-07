@@ -217,7 +217,12 @@ function copyOnClick(n){
   range.selectNode(document.getElementById(copyBoxID));
   window.getSelection().removeAllRanges(); // clear current selection
   window.getSelection().addRange(range); // to select text
-  document.execCommand("copy");
+  let pcnStatus = document.execCommand("copy");
+  if(!pcnStatus){
+    console.log("copy  pcn Failed");
+  }
+  else
+    console.log("copy pcn success")
   window.getSelection().removeAllRanges();// to deselect	
 	tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
 	pasteOnClick(0,formIndex); //designate pcn and designate which form 
@@ -226,7 +231,12 @@ function copyOnClick(n){
 	range.selectNode(document.getElementById(copyBoxID));
   window.getSelection().removeAllRanges(); // clear current selection
   window.getSelection().addRange(range); // to select text
-  document.execCommand("copy");
+  let serialStatus=document.execCommand("copy");
+  if(!serialStatus){
+    console.log("copy  serial Failed");
+  }
+  else
+    console.log("copy serial success")
   window.getSelection().removeAllRanges();
   pasteOnClick(1,formIndex);
 }
