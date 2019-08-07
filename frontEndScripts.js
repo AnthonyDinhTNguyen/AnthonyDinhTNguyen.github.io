@@ -192,6 +192,16 @@ function pasteOnClick(pcnOrSerial,formNum){
 	//document.execCommand('paste');
 }
 
+function clearSelection(){
+  var sel = window.getSelection ? window.getSelection() : document.selection;
+  if (sel) {
+    if (sel.removeAllRanges) {
+        sel.removeAllRanges();
+    } else if (sel.empty) {
+        sel.empty();
+    }
+}
+}
 function copyOnClick(n){
   //figure out which form checkout, return, update... is visible
   var i;
@@ -215,7 +225,8 @@ function copyOnClick(n){
   //else
 
   range.selectNode(document.getElementById(copyBoxID));
-  window.getSelection().removeAllRanges(); // clear current selection
+  //window.getSelection().removeAllRanges(); // clear current selection
+  clearSelection();
   window.getSelection().addRange(range); // to select text
   let pcnStatus = document.execCommand("copy");
   if(!pcnStatus){
@@ -229,7 +240,8 @@ function copyOnClick(n){
 
 	copyBoxID = "serialNum"+n;
 	range.selectNode(document.getElementById(copyBoxID));
-  window.getSelection().removeAllRanges(); // clear current selection
+  //window.getSelection().removeAllRanges(); // clear current selection
+  clearSelction();
   window.getSelection().addRange(range); // to select text
   let serialStatus=document.execCommand("copy");
   if(!serialStatus){
