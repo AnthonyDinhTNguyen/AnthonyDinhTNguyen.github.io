@@ -193,7 +193,7 @@ function pasteOnClick(pcnOrSerial,formNum){
 }
 
 function clearSelection(){
-  if(document.selection){
+ /* if(document.selection){
     document.selection.empty();
   }
   else if (window.getSelection) {
@@ -203,6 +203,14 @@ function clearSelection(){
     else if (window.getSelection().removeAllRanges) {  // Firefox
       window.getSelection().removeAllRanges();
     }
+  }*/
+  if (doc.body.createTextRange) { // All IE but Edge
+    var range = doc.body.createTextRange();
+    range.collapse();
+    range.select();
+  }
+  else {
+    doc.getSelection().removeAllRanges();
   }
 }
 function copyOnClick(n){
