@@ -204,13 +204,13 @@ function clearSelection(){
       window.getSelection().removeAllRanges();
     }
   }*/
-  if (doc.body.createTextRange) { // All IE but Edge
-    var range = doc.body.createTextRange();
+  if (document.body.createTextRange) { // All IE but Edge
+    var range = document.body.createTextRange();
     range.collapse();
     range.select();
   }
   else {
-    doc.getSelection().removeAllRanges();
+    document.getSelection().removeAllRanges();
   }
 }
 function copyOnClick(n){
