@@ -206,6 +206,7 @@ function clearSelection(){
   }
 }
 function copyOnClick(n){
+  clearForms();//delete contents of forms before pasting in the new stuff
   //figure out which form checkout, return, update... is visible
   var i;
   var formIndex = -1;
