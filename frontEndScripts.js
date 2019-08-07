@@ -244,7 +244,7 @@ function copyOnClick(n){
 	copyBoxID = "serialNum"+n;
 	range.selectNode(document.getElementById(copyBoxID));
   //window.getSelection().removeAllRanges(); // clear current selection
-  clearSelction();
+  clearSelection();
   window.getSelection().addRange(range); // to select text
   let serialStatus=document.execCommand("copy");
   if(!serialStatus){
