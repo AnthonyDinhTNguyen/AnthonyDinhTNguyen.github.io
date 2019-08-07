@@ -193,17 +193,6 @@ function pasteOnClick(pcnOrSerial,formNum){
 }
 
 function clearSelection(){
- /* if(document.selection){
-    document.selection.empty();
-  }
-  else if (window.getSelection) {
-    if (window.getSelection().empty) {  // Chrome
-      window.getSelection().empty();
-    } 
-    else if (window.getSelection().removeAllRanges) {  // Firefox
-      window.getSelection().removeAllRanges();
-    }
-  }*/
   if (document.body.createTextRange) { // All IE but Edge
     var range = document.body.createTextRange();
     range.collapse();
@@ -213,10 +202,8 @@ function clearSelection(){
     document.getSelection().removeAllRanges();
   }
 }
-function copyOnClick(n){
-  clearForms();//delete contents of forms before pasting in the new stuff
-  //figure out which form checkout, return, update... is visible
-  var i;
+
+function getCurrentForm(){
   var formIndex = -1;
   if(currentForm =="checkout"){
     formIndex = checkoutIndex;//index to designate which array element corrensponds to the checkout form in the (getElemetnsbyclassname call in paste function)
@@ -230,39 +217,50 @@ function copyOnClick(n){
   else if(currentForm =="delete"){
     formIndex = deleteIndex;//index to designate which array element corrensponds to the delete form
   }
+  return formindex;
+}
+function copyOnClick(n){
+  clearForms();//delete contents of forms before pasting in the new stuff
+  //figure out which form checkout, return, update... is visible
+  var i;
+  var formIndex = getCurrentForm();//returns -1 on error and an index corresponding to which form is currently showing on the webpage.
   var range = document.createRange();
   var copyBoxID ="";
-  //if(pcnOrSerial == 0)
-  copyBoxID = "pcnID"+n;
-  //else
 
-  range.selectNode(document.getElementById(copyBoxID));
+  copyBoxID = "pcnID"+n;
+  var copyContents = document.getElementById(copyBoxID).textContent;
+  if(copyContents!=''){
+    range.selectNode(document.getElementById(copyBoxID));
   //window.getSelection().removeAllRanges(); // clear current selection
-  clearSelection();
-  window.getSelection().addRange(range); // to select text
-  let pcnStatus = document.execCommand("copy");
-  if(!pcnStatus){
+    clearSelection();
+    window.getSelection().addRange(range); // to select text
+    let pcnStatus = document.execCommand("copy");
+    if(!pcnStatus){
     console.log("copy  pcn Failed");
+    }
+    else
+      console.log("copy pcn success")
+    window.getSelection().removeAllRanges();// to deselect	
+    tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
+    pasteOnClick(0,formIndex); //designate pcn and designate which form 
   }
-  else
-    console.log("copy pcn success")
-  window.getSelection().removeAllRanges();// to deselect	
-	tempAlert("copied "+document.getElementById(copyBoxID).textContent, 800);
-	pasteOnClick(0,formIndex); //designate pcn and designate which form 
 
 	copyBoxID = "serialNum"+n;
-	range.selectNode(document.getElementById(copyBoxID));
-  //window.getSelection().removeAllRanges(); // clear current selection
-  clearSelection();
-  window.getSelection().addRange(range); // to select text
-  let serialStatus=document.execCommand("copy");
-  if(!serialStatus){
-    console.log("copy  serial Failed");
+  copyContents = document.getElementById(copyBoxID).textContent;
+  if(copyContents !=''){
+	 range.selectNode(document.getElementById(copyBoxID));
+    //window.getSelection().removeAllRanges(); // clear current selection
+    clearSelection();
+    window.getSelection().addRange(range); // to select text
+    let serialStatus=document.execCommand("copy");
+    if(!serialStatus){
+      console.log("copy  serial Failed");
+    }
+    else
+      console.log("copy serial success")
+    window.getSelection().removeAllRanges();
+    pasteOnClick(1,formIndex);
   }
-  else
-    console.log("copy serial success")
-  window.getSelection().removeAllRanges();
-  pasteOnClick(1,formIndex);
 }
 
 
