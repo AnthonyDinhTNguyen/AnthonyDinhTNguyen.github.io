@@ -193,16 +193,16 @@ function pasteOnClick(pcnOrSerial,formNum){
 }
 
 function clearSelection(){
-  if (window.getSelection) {
+  if(document.selection){
+    document.selection.empty();
+  }
+  else if (window.getSelection) {
     if (window.getSelection().empty) {  // Chrome
       window.getSelection().empty();
     } 
     else if (window.getSelection().removeAllRanges) {  // Firefox
       window.getSelection().removeAllRanges();
     }
-  }
-  else if (document.selection) {  // IE?
-    document.selection.empty();
   }
 }
 function copyOnClick(n){
