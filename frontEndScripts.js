@@ -217,7 +217,7 @@ function getCurrentForm(){
   else if(currentForm =="delete"){
     formIndex = deleteIndex;//index to designate which array element corrensponds to the delete form
   }
-  return formindex;
+  return formIndex;
 }
 function copyOnClick(n){
   clearForms();//delete contents of forms before pasting in the new stuff
