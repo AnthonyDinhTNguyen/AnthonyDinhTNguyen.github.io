@@ -47,6 +47,7 @@ function showInsert(){
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "insert";
   clearForms(); // delete form content on form switch
+  showAll(); //show entire table contents on form switch (remove table filters)
 }
 function showDelete(){
 	document.getElementById("newItemForm").style.display="none";
@@ -56,6 +57,7 @@ function showDelete(){
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "delete";
   clearForms(); // delete form content on form switch
+  showAll(); //show entire table contents on form switch (remove table filters)
 }
 function showUpdate(){
 	document.getElementById("newItemForm").style.display="none";
@@ -65,6 +67,7 @@ function showUpdate(){
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "update";
   clearForms(); // delete form content on form switch
+  showAll(); //show entire table contents on form switch (remove table filters)
 }
 function showBackup(){
 	document.getElementById("newItemForm").style.display="none";
@@ -74,6 +77,7 @@ function showBackup(){
 	document.getElementById("restoreForm").style.display="none";
   currentForm = "backup";
   clearForms(); // delete form content on form switch
+  showAll(); //show entire table contents on form switch (remove table filters)
 }
 function showRestore(){
 	document.getElementById("newItemForm").style.display="none";
@@ -83,6 +87,7 @@ function showRestore(){
 	document.getElementById("restoreForm").style.display="block";
   currentForm = "restore";
   clearForms(); // delete form content on form switch
+  showAll(); //show entire table contents on form switch (remove table filters)
 
 }
 function showCheckout(){
@@ -90,12 +95,14 @@ function showCheckout(){
 	document.getElementById("returnForm").style.display="none";
   currentForm = "checkout";
   clearForms(); // delete form content on form switch
+  showAll(); //show entire table contents on form switch (remove table filters)
 }
 function showReturn(){
 	document.getElementById("checkoutForm").style.display="none";
 	document.getElementById("returnForm").style.display="block";
   currentForm = "return";
   clearForms(); // delete form content on form switch
+  showAll(); //show entire table contents on form switch (remove table filters)
 }
 
 function mergeSort(n){
