@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Moog Aircraft Group | Electrical Engineering</title>
+		<link rel="stylesheet" href=".\style.css"
+		type="text/css">
+	</head>
+	<script src="frontEndScripts.js"></script>
+	<body>
+	    <header>
+			<div class="container">
+				<div id="branding">
+					<h1><i class="fa fa-rocket"></i> <span class="highlight"> MOOG</span> ESD Lab Inventory</h1>
+				</div>
+				<nav>
+					<ul>
+						<li class="current"><a href="index.php">Home</a></li>
+						<li><a href="managementPage.php">Database Management</a></li>
+						<li><a href="help.html">Help</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<h1>How To Use This Website</h1>
+			<div id="toc_container">
+				<p class="toc_title">Table Of Contents</p>
+					<ul class="toc_list">
+  						<li><a href="#GeneralUse">1. Checkout/Return Items</a></li>
+  							<!--<ul>
+    							<li><a href="#First_Sub_Point_1">1.1 First Sub Point 1</a></li>
+    							<li><a href="#First_Sub_Point_2">1.2 First Sub Point 2</a></li>
+  							</ul>-->
+						<li><a href="#AddEntry">2. Add New Items to the Inventory</a></li>
+						<li><a href="#UpdateEntry">3. Update Information in Existing Entries</a></li>
+						<li><a href="#DeleteEntry">4. Delete An Entry From The Database</a></li>
+						<li><a href="#BackupDatabase">5. Backup The Database (Download as CSV)</a></li>
+						<li><a href="#RestoreDatabase">5. Restore The Database (From a Backup CSV)</a></li>
+					</ul>
+				</div>
+		<section style = "margin-top: 4%; margin-bottom: 4%;">
+			<A NAME = "GeneralUse"></A>
+			<h2>General Use For Checkout And Return</h2>
+				<p>1) Use the <span style="display:inline-block; color: #3498DB"> Blue "Select Action"</span><span> button to choose either Checkout or Return</span></p>
+				<image src="pictures/SelectAction.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+				<p>2) Enter The Serial Number or PCN (or both) into the respective fields. These numbers should be found on the device you are Checking Out/Returning</p>
+				<image src="pictures/PCNSerialField.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+				<!--<p style="font-style: italic;">figure1</p>-->
+				<p>3) The table will filter results as characters are entered. When the last digit of the PCN/Serial is entered, there should only be one item displayed in the table</p>
+				<p style="margin-left:40px; font-style:bold;">-Ensure the the PCN/Serial Number is entered EXACTLY as shown in the table</p>
+				<p style = "margin-left:40px;">-If no entry is shown in the table, the item is not in the database and must be added by an administrator</p>
+				<image src="pictures/FilteredTable.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+				<p>4) Fill out the remaining fields of the form (Either the Checkout or Return item Form), and click the Checkout/Return Item Button</p>
+				<p style = "margin-left:40px;">-Checkout Fields: Location the item is being taken to, Your Name, Today's Date</p>
+				<p style = "margin-left:40px;">-Return Fields: Today's Date</p>
+				<image src="pictures/CheckoutReturn.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+				<p>5) A message will display above the table stating whether the operation Succeeded or Failed.</p>  
+				<image src="pictures/OperationStatus.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+		</section style = "height:auto;">
+		<div class = "boundary">
+		</div>
+		<section style = "margin-top: 4%; margin-bottom: 4%;">
+			<A NAME = "AddEntry"></A>
+			<h2>How to Add New Items To the Inventory List</h2>
+				<p>1) Go to the Database Management Tab</p>
+				<image src="pictures/NavBar.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+				<p>2) Use the <span style="display:inline-block; color: #3498DB"> Blue "Select Action"</span><span> button to choose "Create New Entry"</span></p>
+				<image src="pictures/CreateNewEntry.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+				<p>3) Enter all of the required information into the form and click "Insert"</p>
+				<p style = "margin-left:40px;">-Check the status message (above the table) to see whether the action succeeded or failed</p>
+				<image src="pictures/InsertStatusMessage.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+		</section>
+		<div class = "boundary">
+		</div>
+		<section style="margin-top: 4%; margin-bottom: 4%;">
+			<A NAME = "UpdateEntry"></A>
+			<h2>How to Update Information for an Existing Inventory Entry</h2>
+			<p>1) Go to the Database Management Tab</p>
+			<image src="pictures/NavBar.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>2) Use the <span style="display:inline-block; color: #3498DB"> Blue "Select Action"</span><span> button to choose "Update New Entry"</span></p>
+			<image src="pictures/UpdateEntry.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>3) Enter the PCN/Serial Number (either one or both) for the item entry you want to update</p>
+			<p style = "margin-left:40px;">-The table will filter results as you enter characters. After entering the last character, there should only be 1 item in the table</p>
+			<p style = "margin-left:40px;">-Ensure that the PCN/Serial Number(s) are entered exactly as shown in the table </p>
+			<image src="pictures/UpdateEntryFormFilled.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>4) Enter the information you wish to change into the rest of the form.</p>
+			<p style = "margin-left:40px;">-Any fields left blank will be left unchanged</p>
+			<p style = "margin-left:40px;">-Click "Update" once you are done entering the new information</p>
+			<p style = "margin-left:40px;">-Check the status message above the table to see if the update succeeded or failed.</p>
+			<image src="pictures/Update.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+		</section>
+		<div class = "boundary">
+		</div>
+		<section style="margin-top: 4%; margin-bottom:4%;">
+			<A NAME = "DeleteEntry"></A>
+			<h2> How to Delete Entries From the Database</h2>
+			<p>1) Go to the Database Management Tab</p>
+			<image src="pictures/NavBar.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>2) Use the <span style="display:inline-block; color: #3498DB"> Blue "Select Action"</span><span> button to choose "Update New Entry"</span></p>
+			<image src="pictures/DeleteEntry.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>3) Enter the PCN/Serial Number(Either one or both) for the item we want to delete</p>
+			<p style = "margin-left:40px;">-Click Delete and check the status message to see if it succeeded or failed</p>
+			<image src="pictures/DeleteStatusMessage.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+		</section>
+		<div class = "boundary">
+		</div>		
+		<section style="margin-top: 4%; margin-bottom:4%;">
+			<A NAME = "BackupDatabase"></A>
+			<h2> How to Backup the Database</h2>
+			<p>1) Go to the Database Management Tab</p>
+			<image src="pictures/NavBar.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>2) Use the <span style="display:inline-block; color: #3498DB"> Blue "Select Action"</span><span> button to choose "Backup Inventory"</span></p>
+			<image src="pictures/BackupInventory.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>3) Enter a name for the backup file to be saved as</p>
+			<image src="pictures/BackupForm.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>4) Click "Backup" and Save the file to your computer</p>
+			<image src="pictures/SaveBackup.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+		</section>
+		<div class = "boundary">
+		</div>	
+		<section style="margin-top: 4%; margin-bottom:4%;">
+			<A NAME="RestoreDatabase"></A>
+			<h2> How to Restore the Database</h2>
+			<p>Note: This is probably a very rare task</p>
+			<p>Only use this if you have made a serious error in editing the database and want to restore it to a previous form</p>
+			<br>
+			<p>1) Go to the Database Management Tab</p>
+			<image src="pictures/NavBar.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>2) Use the <span style="display:inline-block; color: #3498DB"> Blue "Select Action"</span><span> button to choose "Restore Inventory"</span></p>
+			<image src="pictures/RestoreInventory.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+			<p>3) Click "Browse" and select the CSV file (obtained from the backup inventory section)</p>
+			<p style = "margin-left:40px;">-Click Restore</p>
+			<image src="pictures/RestoreForm.png" style="width:60%; max-height: 400px; border: 6px solid black; margin-left: 5%;"></image>
+		</section>		
+	</body>
+</html>

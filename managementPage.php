@@ -16,6 +16,7 @@
 				<ul>
 					<li class="current"><a href="index.php">Home</a></li>
 					<li><a href="managementPage.php">Database Management</a></li>
+					<li><a href="help.html">Help</a></li>
 					<!--<li><a href="services.html">Services</a></li>-->
 				</ul>
 			</nav>
@@ -44,8 +45,8 @@
 		<form action="update.php" method="post" id = "updateForm">
 			<h1>Update Existing Database Entry</h1>
 			<h2>Enter the PCN or Serial Number of Entry You Want To Update</h2>
-			PCN#: <input type="text" name="pcn" class = "pcnInput" id = "updatePCN" oninput="filterOnInput('updatePCN')"><br>
-			Serial#: <input type="text" name="serial" class = "serialInput" id = "updateSerial" oninput="filterOnInput('updateSerial')"><br>
+			PCN#: <input type="text" name="pcn" class = "pcnInput" id = "updatePCN" oninput="filterOnInput('pcn')"><br>
+			Serial#: <input type="text" name="serial" class = "serialInput" id = "updateSerial" oninput="filterOnInput('serial')"><br>
 			<h2>Enter the Updated Information</h2>
 			Manufacture/Model: <input type="text" name="model"><br>
 			Item Description:  <input type="text" name="description"><br>
@@ -58,8 +59,8 @@
 		</form>
 		<form action="delete.php" method="post" id="deleteForm">
 			<h1>Delete Item Based on PCN or Serial Number</h1>
-			PCN#: <input type="text" name="pcn" class = "pcnInput" id = "deletePCN" oninput="filterOnInput('deletePCN')"><br>
-			Serial#: <input type="text" name="serial" class = "serialInput" id = "deleteSerial" oninput="filterOnInput('deleteSerial')"><br>
+			PCN#: <input type="text" name="pcn" class = "pcnInput" id = "deletePCN" oninput="filterOnInput('pcn')"><br>
+			Serial#: <input type="text" name="serial" class = "serialInput" id = "deleteSerial" oninput="filterOnInput('serial')"><br>
 			<input type = "submit" value = "Delete Entry">
 		</form>
 		<form action="backup.php" method="post" id="backupForm">
