@@ -58,7 +58,6 @@
 				echo '<script type="text/javascript">',"showReturn(); alertResult('$result');",'</script>';
 			}
 		?>
-		
 		<?php include 'backend.php';?>
 	</body>
 </html>
