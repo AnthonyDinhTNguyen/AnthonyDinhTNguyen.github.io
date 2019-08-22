@@ -37,7 +37,7 @@ function clearForms(){
     let el2 = serialList[i];
     el2.value = '';
   }
-
+  document.getElementById('filterInputStr').value = '';
 }
 function showInsert(){
 	document.getElementById("newItemForm").style.display="block";
