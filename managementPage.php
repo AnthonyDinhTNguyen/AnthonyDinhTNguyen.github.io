@@ -14,8 +14,8 @@
 			</div>
 			<nav>
 				<ul>
-					<li class="current"><a href="index.php">Home</a></li>
-					<li><a href="managementPage.php">Database Management</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li class="current"><a href="managementPage.php">Database Management</a></li>
 					<li><a href="help.html">Help</a></li>
 					<!--<li><a href="services.html">Services</a></li>-->
 				</ul>
