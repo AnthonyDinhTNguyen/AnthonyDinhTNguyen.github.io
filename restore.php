@@ -9,6 +9,7 @@ $headerrow = 0;
 $connect = mysqli_connect($servername, $username, $password, $dbname);
 if(isset($_POST["submit"]))
 {
+	mysqli_query($connect,"DELETE * FROM ESDInventory");
 	if($_FILES['file']['name'])
 	{
 		$filename = explode(".", $_FILES['file']['name']);
