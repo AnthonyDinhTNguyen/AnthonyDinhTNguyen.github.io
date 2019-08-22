@@ -7,6 +7,18 @@
 	</head>
 	<script src="frontEndScripts.js"></script>
 	<body>
+		<div id="mySidenav" class="sidenav">
+  			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  			<a href="#Top">Top</a>
+	  		<a href="#GeneralUse">Checkout/Return</a>
+  			<a href="#AddEntry">Add New Items</a>
+  			<a href="#UpdateEntry">Update Entry</a>
+  			<a href="#DeleteEntry">Delete Item</a>
+    		<a href="#BackupDatabase">Backup Database</a>
+    		<a href="#RestoreDatabase">Restore Database</a>
+    		<a href="#Notes">Notes</a>			
+		</div>
+		<A NAME="Top"></A>
 	    <header>
 			<div class="container">
 				<div id="branding">
@@ -21,6 +33,7 @@
 				</nav>
 			</div>
 		</header>
+		<button id = "floating-button" type="button" onclick="toggleNav()">&#9776;</button>
 		<h1>How To Use This Website</h1>
 			<div id="toc_container">
 				<p class="toc_title">Table Of Contents</p>

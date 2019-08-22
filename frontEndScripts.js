@@ -319,3 +319,25 @@ function filterOnInput(filterStr){
 	 }
   }
 }
+
+var menuState = 0;
+function toggleNav(){
+	if(menuState ==0){
+		menuState = 1;
+		openNav();
+	}
+	else{
+		menuState = 0;
+		closeNav();
+	}
+}
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("floating-button").style.marginRight = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("floating-button").style.marginRight = "0";
+}
