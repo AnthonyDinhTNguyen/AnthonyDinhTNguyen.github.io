@@ -51,7 +51,7 @@ if ($result!=false) {
 		$returnDate = $row['returnDate'];
 	}
 }
-$stmt = sqlsrv_query("UPDATE ESDInventory SET model = ?, description = ?, calibration = ?, name = ?, checkoutDate = ?, area = ?, returnDate=? WHERE serial = ? OR pcn = ?",[$model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn]);
+$stmt = sqlsrv_query($conn,"UPDATE ESDInventory SET model = ?, description = ?, calibration = ?, name = ?, checkoutDate = ?, area = ?, returnDate=? WHERE serial = ? OR pcn = ?",[$model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn]);
 if(sqlsrv_rows_affected($stmt)>=1){
 	header("Location: managementPage.php?update=*SUCCESS. Item Updated*");
 	sqlsrv_close($conn);
