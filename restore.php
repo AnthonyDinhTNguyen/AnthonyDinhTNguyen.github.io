@@ -6,6 +6,12 @@ $dbname = "moogmssql";
 // Create connection
 $connectionInfo = array("Database"=>"moogmssql","UID"=>"moogmssql","PWD"=>"Ju0UnRH6?VI~");
 $conn = sqlsrv_connect($servername, $connectionInfo);
+if( $conn ) {
+     echo "Connection establishe1d.<br />";
+}else{
+     echo "Connection could not be established.<br />";
+     die( print_r( sqlsrv_errors(), true));
+}
 if(isset($_POST["submit"]))
 {
 	sqlsrv_query($conn,"DELETE FROM ESDInventory");
