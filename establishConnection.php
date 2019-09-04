@@ -11,10 +11,4 @@ $conn = sqlsrv_connect($servername, $connectionInfo);
 /*if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } */
-if( $conn ) {
-     echo "Connection established.<br />";
-}else{
-     echo "Connection could not be established.<br />";
-     die( print_r( sqlsrv_errors(), true));
-}
 ?>
