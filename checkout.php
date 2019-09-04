@@ -38,7 +38,7 @@ elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
 $stmt = sqlsrv_query($conn, "UPDATE $tableName SET name = ?, checkoutDate = ?, area = ?, returnDate='' WHERE serial = ? OR pcn = ?",[$name, $checkoutDate, $area, $serial, $pcn]);
-if($stmt->affected_rows>=1){
+if(sqlsrv_rows_affected($stmt)>=1){
 	header("Location: index.php?checkout=*SUCCESS. Item Checked Out*");
 	sqlsrv_close($conn);
 	exit();
