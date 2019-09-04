@@ -11,12 +11,12 @@ if(isset($_POST["submit"]))
 		if($filename[1] == 'csv')
 		{
 			$handle = fopen($_FILES['file']['tmp_name'], "r");
-			/*while($data = fgetcsv($handle))
+			while($data = fgetcsv($handle))
 			{
 				if($headerrow ==0){
 					$headerrow = 1;
 				}
-				else{
+				/*else{
 					/*$model = mysqli_real_escape_string($connect, $data[0]);  
 					$description = mysqli_real_escape_string($connect, $data[1]);
 					$pcn = mysqli_real_escape_string($connect, $data[2]);
@@ -37,8 +37,8 @@ if(isset($_POST["submit"]))
 					$returnDate = $data[8];
 					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?,?)";
 					sqlsrv_query($conn, $query,[$model, $description,$pcn, $serial, $area, $calibration, $name, $checkoutDate, $returnDate]);
-				}
-			}*/
+				}*/
+			}
 			fclose($handle);
 			echo "<script>alert('Import done');</script>";
 		}
