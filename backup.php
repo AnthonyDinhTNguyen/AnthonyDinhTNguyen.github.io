@@ -7,8 +7,8 @@ if ($result==false) die('Couldn\'t fetch records');
 $num_fields = sqlsrv_num_fields($result);
 $headers = array();
 while ($fieldinfo = sqlsrv_field_metadata($result)) {
-    for($i = 0; i <count($fieldinfo); $i++)
-        $headers[i] = $fieldinfo[i]["Name"];
+    for($i = 0; $i <count($fieldinfo); $i++)
+        $headers[$i] = $fieldinfo[$i]["Name"];
 }
 $fp = fopen('php://output', 'w');
 if ($fp && $result) {
