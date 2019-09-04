@@ -16,7 +16,7 @@ elseif(empty($pcn)){
 elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
-$sql = sqlsrv_query($conn,"DELETE FROM ESDInventory WHERE pcn =? OR serial = ?",[$pcn,$serial]);
+$sql = sqlsrv_query($conn,"DELETE FROM $tableName WHERE pcn =? OR serial = ?",[$pcn,$serial]);
 if(sqlsrv_rows_affected($sql)<=0){
 	header("Location: managementPage.php?delete=*FAILED to Delete Item. Enter a PCN or Serial Number*");
 	sqlsrv_close($conn);

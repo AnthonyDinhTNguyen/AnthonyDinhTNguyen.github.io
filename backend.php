@@ -3,7 +3,7 @@
 <script src="frontEndScripts.js"></script>
 <?php
 include 'establishConnection.php';
-$sql = "SELECT model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate FROM ESDInventory";
+$sql = "SELECT model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate FROM $tableName";
 //$result = $conn->query($sql);
 $result = sqlsrv_query($conn, $sql);
 $pcnN = 0;

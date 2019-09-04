@@ -25,7 +25,7 @@ elseif(empty($pcn)){
 elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
-$sql = "SELECT model, description, calibration, name, checkoutDate, area, returnDate FROM ESDInventory WHERE serial = '$serial' OR pcn = '$pcn'";
+$sql = "SELECT model, description, calibration, name, checkoutDate, area, returnDate FROM $tableName WHERE serial = '$serial' OR pcn = '$pcn'";
 $result = sqlsrv_query($conn,$sql);
 if ($result!=false) {
 	$row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
@@ -51,7 +51,7 @@ if ($result!=false) {
 		$returnDate = $row['returnDate'];
 	}
 }
-$stmt = sqlsrv_query($conn,"UPDATE ESDInventory SET model = ?, description = ?, calibration = ?, name = ?, checkoutDate = ?, area = ?, returnDate=? WHERE serial = ? OR pcn = ?",[$model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn]);
+$stmt = sqlsrv_query($conn,"UPDATE $tableName SET model = ?, description = ?, calibration = ?, name = ?, checkoutDate = ?, area = ?, returnDate=? WHERE serial = ? OR pcn = ?",[$model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn]);
 if(sqlsrv_rows_affected($stmt)>=1){
 	header("Location: managementPage.php?update=*SUCCESS. Item Updated*");
 	sqlsrv_close($conn);

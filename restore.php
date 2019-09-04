@@ -3,7 +3,7 @@ include 'establishConnection.php';
 
 if(isset($_POST["submit"]))
 {
-	sqlsrv_query($conn,"DELETE FROM ESDInventory");
+	sqlsrv_query($conn,"DELETE FROM $tableName");
 
 	if($_FILES['file']['name'])
 	{
@@ -17,15 +17,6 @@ if(isset($_POST["submit"]))
 					$headerrow = 1;
 				}
 				else{
-					/*$model = mysqli_real_escape_string($connect, $data[0]);  
-					$description = mysqli_real_escape_string($connect, $data[1]);
-					$pcn = mysqli_real_escape_string($connect, $data[2]);
-					$serial = mysqli_real_escape_string($connect, $data[3]);
-					$calibration = mysqli_real_escape_string($connect, $data[5]);
-					$area = mysqli_real_escape_string($connect, $data[4]);
-					$name = mysqli_real_escape_string($connect, $data[6]);
-					$checkoutDate = mysqli_real_escape_string($connect, $data[7]);
-					$returnDate = mysqli_real_escape_string($connect, $data[8]);*/
 					$model = $data[0];  
 					$description = $data[1];
 					$pcn = $data[2];
@@ -35,7 +26,7 @@ if(isset($_POST["submit"]))
 					$name = $data[6];
 					$checkoutDate =$data[7];
 					$returnDate = $data[8];
-					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?,?)";
+					$query = "INSERT into $tableName(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?,?)";
 					sqlsrv_query($conn, $query,[$model, $description,$pcn, $serial, $area, $calibration, $name, $checkoutDate, $returnDate]);
 				}
 			}
