@@ -9,10 +9,9 @@ if(isset($_POST["submit"]))
 	{
 		$filename = explode(".", $_FILES['file']['name']);
 		if($filename[1] == 'csv')
-			echo "here";
-		/*{
+		{
 			$handle = fopen($_FILES['file']['tmp_name'], "r");
-			while($data = fgetcsv($handle))
+			/*while($data = fgetcsv($handle))
 			{
 				if($headerrow ==0){
 					$headerrow = 1;
@@ -39,10 +38,10 @@ if(isset($_POST["submit"]))
 					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?,?)";
 					sqlsrv_query($conn, $query,[$model, $description,$pcn, $serial, $area, $calibration, $name, $checkoutDate, $returnDate]);
 				}
-			}
+			}*/
 			fclose($handle);
 			echo "<script>alert('Import done');</script>";
-		}*/
+		}
 	}
 }
 	
