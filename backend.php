@@ -8,7 +8,7 @@ $password = "Ju0UnRH6?VI~";
 $dbname = "moogmssql";
 
 // Create connection
-$connectionInfo = array("Database"=>"moogmssql","UID"=>"moogmssql","PWD"=>"Ju0UnRH6?VI~")
+$connectionInfo = array("Database"=>"moogmssql","UID"=>"moogmssql","PWD"=>"Ju0UnRH6?VI~");
 $conn = sqlsrv_connect($servername, $connectionInfo);
 // Check connection
 /*if ($conn->connect_error) {
