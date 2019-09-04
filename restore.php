@@ -1,7 +1,9 @@
 <?php
 include 'establishConnection.php';
+
 if(isset($_POST["submit"]))
 {
+	echo"here";
 	sqlsrv_query($conn,"DELETE FROM ESDInventory");
 	if($_FILES['file']['name'])
 	{
@@ -33,7 +35,7 @@ if(isset($_POST["submit"]))
 					$name = $data[6]);
 					$checkoutDate =$data[7];
 					$returnDate = $data[8];
-					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?)";
+					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?,?)";
 					sqlsrv_query($conn, $query,[$model, $description,$pcn, $serial, $area, $calibration, $name, $checkoutDate, $returnDate]);
 				}
 			}
