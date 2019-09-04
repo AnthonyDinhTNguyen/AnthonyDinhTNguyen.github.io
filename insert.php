@@ -13,7 +13,7 @@ if(empty($pcn)&&empty($serial)){
 	sqlsrv_close($conn);
 	exit();
 }
-$result = sqlsrv_query($conn, "INSERT INTO ESDInventory (model, description, pcn, serial, area, calibration) VALUES (?,?,?,?,?,?)", [$model,$description,$pcn,$serial,$area,$calibration,$result]);
+$result = sqlsrv_query($conn, "INSERT INTO $tableName (model, description, pcn, serial, area, calibration) VALUES (?,?,?,?,?,?)", [$model,$description,$pcn,$serial,$area,$calibration,$result]);
 header("Location: managementPage.php?insert=*SUCCESSFULLY Inserted Item*");
 sqlsrv_close($conn);
 ?>
