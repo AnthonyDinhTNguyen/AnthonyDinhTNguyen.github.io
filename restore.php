@@ -1,11 +1,11 @@
-<?php include 'establishConnection.php';?>
 <?php
-/*$servername = "den1.mysql6.gear.host";
-$username = "inventorymoog";
-$password = "Ti6d-o4_bwPf";
-$dbname = "inventorymoog";
-$headerrow = 0;
-$connect = mysqli_connect($servername, $username, $password, $dbname);*/
+$servername = "den1.mssql8.gear.host";
+$username = "moogmssql";
+$password = "Ju0UnRH6?VI~";
+$dbname = "moogmssql";
+// Create connection
+$connectionInfo = array("Database"=>"moogmssql","UID"=>"moogmssql","PWD"=>"Ju0UnRH6?VI~");
+$conn = sqlsrv_connect($servername, $connectionInfo);
 if(isset($_POST["submit"]))
 {
 	sqlsrv_query($conn,"DELETE FROM ESDInventory");
@@ -37,7 +37,7 @@ if(isset($_POST["submit"]))
 					$calibration = $data[5];
 					$area = $data[4];
 					$name = $data[6]);
-					$checkoutDate = $data[7];
+					$checkoutDate =$data[7];
 					$returnDate = $data[8];
 					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values('$model','$description','$pcn','$serial','$area','$calibration','$name','$checkoutDate', '$returnDate')";
 					sqlsrv_query($conn, $query);
