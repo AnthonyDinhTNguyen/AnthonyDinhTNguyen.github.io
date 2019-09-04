@@ -1,19 +1,7 @@
 <?php
-
-$servername = "den1.mysql6.gear.host";
-$username = "inventorymoog";
-$password = "Ti6d-o4_bwPf";
-$dbname = "inventorymoog";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+include 'establishConnection.php';
 //Prepare Statement
-$stmt = $conn->prepare("UPDATE ESDInventory SET model = ?, description = ?, calibration = ?, name = ?, checkoutDate = ?, area = ?, returnDate=? WHERE serial = ? OR pcn = ?");
-$stmt->bind_param("sssssssss", $model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn);
+//$stmt->bind_param("sssssssss", $model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn);
 
 $name = filter_input(INPUT_POST,'name');
 $checkoutDate = filter_input(INPUT_POST,'checkoutDate');
@@ -38,9 +26,9 @@ elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
 $sql = "SELECT model, description, calibration, name, checkoutDate, area, returnDate FROM ESDInventory WHERE serial = '$serial' OR pcn = '$pcn'";
-$result = $conn->query($sql);
-if ($result->num_rows>0) {
-	$row = $result->fetch_assoc();
+$result = sqlsrv_query($conn,$sql);
+if ($result!=false) {
+	$row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
 	if(empty($name)){
 		$name = $row['name'];
 	}
@@ -63,17 +51,15 @@ if ($result->num_rows>0) {
 		$returnDate = $row['returnDate'];
 	}
 }
-$stmt->execute();
-if($stmt->affected_rows>=1){
+$stmt = sqlsrv_query("UPDATE ESDInventory SET model = ?, description = ?, calibration = ?, name = ?, checkoutDate = ?, area = ?, returnDate=? WHERE serial = ? OR pcn = ?",[$model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn]);
+if(sqlsrv_rows_affected($stmt)>=1){
 	header("Location: managementPage.php?update=*SUCCESS. Item Updated*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();
 }
 else{
 	header("Location: managementPage.php?update=*FAILED to Update Item. Serial Number/PCN are incorrect, or are not in the database*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();
 }
 ?>

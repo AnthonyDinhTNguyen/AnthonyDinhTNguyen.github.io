@@ -3,7 +3,6 @@ include 'establishConnection.php';
 
 if(isset($_POST["submit"]))
 {
-	echo"here";
 	sqlsrv_query($conn,"DELETE FROM ESDInventory");
 	if($_FILES['file']['name'])
 	{

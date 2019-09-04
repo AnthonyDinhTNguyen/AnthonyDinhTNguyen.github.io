@@ -1,19 +1,5 @@
 <?php
 include 'establishConnection.php';
-/*$servername = "den1.mysql6.gear.host";
-$username = "inventorymoog";
-$password = "Ti6d-o4_bwPf";
-$dbname = "inventorymoog";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} */
-//Prepare Statement
-
-//$stmt->bind_param("ssssss", $model, $description, $pcn, $serial, $area, $calibration);
 
 $model = filter_input(INPUT_POST,'model');
 $description = filter_input(INPUT_POST,'description');
