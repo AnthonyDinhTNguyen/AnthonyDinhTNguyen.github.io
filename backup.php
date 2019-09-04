@@ -9,7 +9,8 @@ $headers = array();
 $fieldinfo = sqlsrv_field_metadata($result)
     for($i = 0; $i <count($fieldinfo); $i++)
         $headers[$i] = $fieldinfo[$i]["Name"];
-$fp = fopen('php://output', 'w');
+echo "done";
+/*$fp = fopen('php://output', 'w');
 if ($fp && $result) {
 	$fn = filter_input(INPUT_POST,'filename').".csv";
     header('Content-Type: text/csv');
@@ -21,5 +22,5 @@ if ($fp && $result) {
         fputcsv($fp, array_values($row));
     }
     die;
-}
+}*/
 ?>
