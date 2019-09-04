@@ -23,7 +23,7 @@ elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
 //$stmt->execute();
-$stmt = sqlsrv_query($conn,"UPDATE ESDInventory SET area = 'ESD LAB', returnDate = ? WHERE serial = ? OR pcn = ?",[$serial,$pcn]);
+$stmt = sqlsrv_query($conn,"UPDATE ESDInventory SET area = 'ESD LAB', returnDate = ? WHERE serial = ? OR pcn = ?",[$returnDate,$serial,$pcn]);
 if(sqlsrv_rows_affected($stmt)>=1){
 	header("Location: index.php?return=*SUCCESS. Item Returned*");
 	sqlsrv_close($conn);
