@@ -1,17 +1,5 @@
 <?php
-$servername = "den1.mssql8.gear.host";
-$username = "moogmssql";
-$password = "Ju0UnRH6?VI~";
-$dbname = "moogmssql";
-// Create connection
-$connectionInfo = array("Database"=>"moogmssql","UID"=>"moogmssql","PWD"=>"Ju0UnRH6?VI~");
-$conn = sqlsrv_connect($servername, $connectionInfo);
-if( $conn ) {
-     echo "Connection establishe1d.<br />";
-}else{
-     echo "Connection could not be established.<br />";
-     die( print_r( sqlsrv_errors(), true));
-}
+include 'establishConnection.php';
 if(isset($_POST["submit"]))
 {
 	sqlsrv_query($conn,"DELETE FROM ESDInventory");
@@ -45,8 +33,8 @@ if(isset($_POST["submit"]))
 					$name = $data[6]);
 					$checkoutDate =$data[7];
 					$returnDate = $data[8];
-					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values('$model','$description','$pcn','$serial','$area','$calibration','$name','$checkoutDate', '$returnDate')";
-					sqlsrv_query($conn, $query);
+					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?)";
+					sqlsrv_query($conn, $query,[$model, $description,$pcn, $serial, $area, $calibration, $name, $checkoutDate, $returnDate]);
 				}
 			}
 			fclose($handle);
