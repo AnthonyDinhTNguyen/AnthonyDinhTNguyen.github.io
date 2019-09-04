@@ -1,5 +1,3 @@
-<html>
-<script src="frontEndScripts.js"></script>
 <?php
 $servername = "den1.mssql8.gear.host";
 $username = "moogmssql";
@@ -19,3 +17,4 @@ if( $conn ) {
      echo "Connection could not be established.<br />";
      die( print_r( sqlsrv_errors(), true));
 }
+?>

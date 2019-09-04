@@ -22,4 +22,5 @@ if ($fp && $result) {
     }
     die;
 }
+sqlsrv_close($conn);
 ?>
