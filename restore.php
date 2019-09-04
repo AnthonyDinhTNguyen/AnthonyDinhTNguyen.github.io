@@ -9,7 +9,8 @@ if(isset($_POST["submit"]))
 	{
 		$filename = explode(".", $_FILES['file']['name']);
 		if($filename[1] == 'csv')
-		{
+			echo "here";
+		/*{
 			$handle = fopen($_FILES['file']['tmp_name'], "r");
 			while($data = fgetcsv($handle))
 			{
@@ -25,7 +26,7 @@ if(isset($_POST["submit"]))
 					$area = mysqli_real_escape_string($connect, $data[4]);
 					$name = mysqli_real_escape_string($connect, $data[6]);
 					$checkoutDate = mysqli_real_escape_string($connect, $data[7]);
-					$returnDate = mysqli_real_escape_string($connect, $data[8]);*/
+					$returnDate = mysqli_real_escape_string($connect, $data[8]);
 					$model = $data[0];  
 					$description = $data[1];
 					$pcn = $data[2];
@@ -41,7 +42,7 @@ if(isset($_POST["submit"]))
 			}
 			fclose($handle);
 			echo "<script>alert('Import done');</script>";
-		}
+		}*/
 	}
 }
 	
