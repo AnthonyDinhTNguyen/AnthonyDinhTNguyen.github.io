@@ -27,12 +27,12 @@ if(isset($_POST["submit"]))
 					$checkoutDate = mysqli_real_escape_string($connect, $data[7]);
 					$returnDate = mysqli_real_escape_string($connect, $data[8]);*/
 					$model = $data[0];  
-					/*$description = $data[1];
+					$description = $data[1];
 					$pcn = $data[2];
 					$serial = $data[3];
 					$calibration = $data[5];
 					$area = $data[4];
-					$name = $data[6]);
+					$name = $data[6];
 					$checkoutDate =$data[7];
 					$returnDate = $data[8];
 					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?,?)";
