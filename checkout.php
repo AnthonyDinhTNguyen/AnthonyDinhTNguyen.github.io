@@ -1,19 +1,9 @@
 <?php
 
-$servername = "den1.mysql6.gear.host";
-$username = "inventorymoog";
-$password = "Ti6d-o4_bwPf";
-$dbname = "inventorymoog";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+include 'establishConnection.php';
 //Prepare Statement
-$stmt = $conn->prepare("UPDATE ESDInventory SET name = ?, checkoutDate = ?, area = ?, returnDate='' WHERE serial = ? OR pcn = ?");
-$stmt->bind_param("sssss", $name, $checkoutDate, $area, $serial, $pcn);
+
+//$stmt->bind_param("sssss", $name, $checkoutDate, $area, $serial, $pcn);
 
 $name = filter_input(INPUT_POST,'nameCheck');
 $checkoutDate = filter_input(INPUT_POST,'checkoutDateCheck');
@@ -23,26 +13,22 @@ $area = filter_input(INPUT_POST,'areaCheck');
 $continue = true;
 if(empty($name)){
 	header("Location: index.php?checkout=*FAILED to Checkout Item. Please Enter Your Name*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();
 }
 elseif(empty($checkoutDate)){
 	header("Location: index.php?checkout=*FAILED to Checkout Item. Please Enter The Checkout Date*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();
 }
 elseif (empty($area)){
 	header("Location: index.php?checkout=*FAILED to Checkout Item. Please Specify Where The Item Is Being Taken*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();	
 }
 elseif(empty($pcn)&&empty($serial)){
 	header("Location: index.php?checkout=*FAILED to Checkout Item. The Serial Number or PCN is incorrect or not in the database*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();
 }
 elseif(empty($pcn)){
@@ -51,17 +37,15 @@ elseif(empty($pcn)){
 elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
-$stmt->execute();
+$stmt = sqlsrv_query($conn, "UPDATE ESDInventory SET name = ?, checkoutDate = ?, area = ?, returnDate='' WHERE serial = ? OR pcn = ?",[$name, $checkoutDate, $area, $serial, $pcn]);
 if($stmt->affected_rows>=1){
 	header("Location: index.php?checkout=*SUCCESS. Item Checked Out*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();
 }
 else{
 	header("Location: index.php?checkout=*FAILED to Checkout Item. Please Check the Serial or PCN again*");
-	$stmt->close();
-	$conn->close();
+	sqlsrv_close($conn);
 	exit();
 }
 ?>
