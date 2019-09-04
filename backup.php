@@ -2,8 +2,8 @@
 include 'establishConnection.php';
 //Prepare Statement
 
-$result = sqlsrv_query('SELECT * FROM ESDInventory');
-if (!$result) die('Couldn\'t fetch records');
+$result = sqlsrv_query($conn, 'SELECT * FROM ESDInventory');
+if ($result==false) die('Couldn\'t fetch records');
 $num_fields = sqlsrv_num_fields($result);
 $headers = array();
 while ($fieldinfo = sqlsrv_field_metadata($result)) {
