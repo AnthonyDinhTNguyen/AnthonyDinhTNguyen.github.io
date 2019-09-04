@@ -36,7 +36,7 @@ if(isset($_POST["submit"]))
 					$checkoutDate =$data[7];
 					$returnDate = $data[8];
 					$query = "INSERT into ESDInventory(model, description, pcn, serial, area, calibration, name, checkoutDate, returnDate) values(?,?,?,?,?,?,?,?,?)";
-					sqlsrv_query($conn, $query,[$model, $description,$pcn, $serial, $area, $calibration, $name, $checkoutDate, $returnDate]);*/
+					sqlsrv_query($conn, $query,[$model, $description,$pcn, $serial, $area, $calibration, $name, $checkoutDate, $returnDate]);
 				}
 			}
 			fclose($handle);
