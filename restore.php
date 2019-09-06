@@ -1,10 +1,13 @@
 <?php
+
+//connect to database
 include 'establishConnection.php';
 
 if(isset($_POST["submit"]))
-{
+{	//remove any remaining items from table (to preven duplicates when restoring)
 	sqlsrv_query($conn,"DELETE FROM $tableName");
 
+	//read from csv
 	if($_FILES['file']['name'])
 	{
 		$filename = explode(".", $_FILES['file']['name']);
@@ -17,6 +20,7 @@ if(isset($_POST["submit"]))
 					$headerrow = 1;
 				}
 				else{
+					//gather data from csv and query database (insert)
 					$model = $data[0];  
 					$description = $data[1];
 					$pcn = $data[2];

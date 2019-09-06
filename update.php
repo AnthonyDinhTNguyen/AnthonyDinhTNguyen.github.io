@@ -1,8 +1,9 @@
 <?php
-include 'establishConnection.php';
-//Prepare Statement
-//$stmt->bind_param("sssssssss", $model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn);
 
+//connect to database
+include 'establishConnection.php';
+
+//gather data from the input forms
 $name = filter_input(INPUT_POST,'name');
 $checkoutDate = filter_input(INPUT_POST,'checkoutDate');
 $pcn = trim(filter_input(INPUT_POST,'pcn'));
@@ -13,6 +14,7 @@ $description = filter_input(INPUT_POST,'description');
 $calibration = filter_input(INPUT_POST,'calibration');
 $returnDate = filter_input(INPUT_POST,'returnDate');
 
+//check that appropriate information is provided by the user
 if(empty($pcn)&&empty($serial)){
 	header("Location: managementPage.php?update=*FAILED to Update Item. Enter PCN or Serial Number*");
 	$stmt->close();
@@ -51,6 +53,8 @@ if ($result!=false) {
 		$returnDate = $row['returnDate'];
 	}
 }
+
+//query database
 $stmt = sqlsrv_query($conn,"UPDATE $tableName SET model = ?, description = ?, calibration = ?, name = ?, checkoutDate = ?, area = ?, returnDate=? WHERE serial = ? OR pcn = ?",[$model, $description, $calibration, $name, $checkoutDate, $area, $returnDate, $serial, $pcn]);
 if(sqlsrv_rows_affected($stmt)>=1){
 	header("Location: managementPage.php?update=*SUCCESS. Item Updated*");

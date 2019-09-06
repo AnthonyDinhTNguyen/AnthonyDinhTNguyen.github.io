@@ -3,7 +3,7 @@
 include 'establishConnection.php';
 //Prepare Statement
 
-//$stmt->bind_param("sssss", $name, $checkoutDate, $area, $serial, $pcn);
+//get form information
 
 $name = filter_input(INPUT_POST,'nameCheck');
 $checkoutDate = filter_input(INPUT_POST,'checkoutDateCheck');
@@ -11,6 +11,7 @@ $pcn = trim(filter_input(INPUT_POST,'pcnCheck'));
 $serial = trim(filter_input(INPUT_POST,'serialCheck'));
 $area = filter_input(INPUT_POST,'areaCheck');
 $continue = true;
+//check for appropriately provided information
 if(empty($name)){
 	header("Location: index.php?checkout=*FAILED to Checkout Item. Please Enter Your Name*");
 	sqlsrv_close($conn);
@@ -37,6 +38,8 @@ elseif(empty($pcn)){
 elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
+
+//query database
 $stmt = sqlsrv_query($conn, "UPDATE $tableName SET name = ?, checkoutDate = ?, area = ?, returnDate='' WHERE serial = ? OR pcn = ?",[$name, $checkoutDate, $area, $serial, $pcn]);
 if(sqlsrv_rows_affected($stmt)>=1){
 	header("Location: index.php?checkout=*SUCCESS. Item Checked Out*");

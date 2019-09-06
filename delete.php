@@ -1,7 +1,8 @@
 <?php
 
 include 'establishConnection.php';
-//$sql->bind_param("ss",$pcn,$serial);
+
+//get form information
 $pcn = trim(filter_input(INPUT_POST,'pcn'));
 $serial = trim(filter_input(INPUT_POST,'serial'));
 
@@ -16,6 +17,8 @@ elseif(empty($pcn)){
 elseif(empty($serial)){
 	$serial = "TEMP NAME TO PREVENT...";
 }
+
+//query database
 $sql = sqlsrv_query($conn,"DELETE FROM $tableName WHERE pcn =? OR serial = ?",[$pcn,$serial]);
 if(sqlsrv_rows_affected($sql)<=0){
 	header("Location: managementPage.php?delete=*FAILED to Delete Item. Enter a PCN or Serial Number*");

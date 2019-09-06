@@ -1,11 +1,12 @@
 <?php
 include 'establishConnection.php';
-//Prepare Statement
 
+//get all entries of database
 $result = sqlsrv_query($conn, "SELECT * FROM $tableName");
 if ($result==false) die('Couldn\'t fetch records');
 $num_fields = sqlsrv_num_fields($result);
 $headers = array();
+//write to csv
 $fieldinfo = sqlsrv_field_metadata($result);
     for($i = 0; $i <count($fieldinfo); $i++)
         $headers[$i] = $fieldinfo[$i]["Name"];
